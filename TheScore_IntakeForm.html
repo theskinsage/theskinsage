@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Skin Sage · The Score · Intake Form</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Didact+Gothic&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #f7f3ee;
+  --warm: #ede7dc;
+  --parchment: #e4ddd2;
+  --forest: #1c2e20;
+  --forest-mid: #243828;
+  --bronze: #9e7d4e;
+  --bronze-pale: #d4b896;
+  --bronze-faint: #f0e8dc;
+  --ink: #1a1a18;
+  --ink-mid: #3d3d38;
+  --ink-soft: #6e6e64;
+  --ink-faint: #a0a094;
+  --error: #8b3a3a;
+  --success: #2d5a3d;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 14px;
+  line-height: 1.9;
+  min-height: 100vh;
+}
+
+/* ── HEADER ── */
+.site-header {
+  background: var(--forest);
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(158,125,78,0.25);
+}
+.header-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+  color: var(--bronze-pale);
+}
+.header-tier {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(212,184,150,0.5);
+}
+
+/* ── PROGRESS BAR ── */
+.progress-wrap {
+  background: var(--parchment);
+  border-bottom: 1px solid rgba(158,125,78,0.15);
+}
+.progress-inner {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 16px 40px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.progress-bar-track {
+  flex: 1;
+  height: 2px;
+  background: rgba(158,125,78,0.15);
+  border-radius: 1px;
+  overflow: hidden;
+}
+.progress-bar-fill {
+  height: 100%;
+  background: var(--bronze);
+  border-radius: 1px;
+  transition: width 0.5s ease;
+  width: 0%;
+}
+.progress-text {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--bronze);
+  white-space: nowrap;
+}
+
+/* ── MAIN WRAP ── */
+.main { max-width: 740px; margin: 0 auto; padding: 60px 40px 100px; }
+
+/* ── INTRO PANEL ── */
+.intro-panel {
+  text-align: center;
+  padding: 60px 40px;
+  border: 1px solid rgba(158,125,78,0.2);
+  background: white;
+  margin-bottom: 60px;
+}
+.intro-eyebrow {
+  font-size: 9px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--bronze);
+  margin-bottom: 20px;
+}
+.intro-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  font-weight: 200;
+  color: var(--forest);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.intro-title em { font-style: italic; color: var(--bronze); }
+.intro-body {
+  font-size: 13px;
+  color: var(--ink-soft);
+  max-width: 480px;
+  margin: 0 auto 32px;
+  line-height: 1.9;
+}
+.intro-price {
+  display: inline-block;
+  background: var(--forest);
+  color: var(--bronze-pale);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  letter-spacing: 3px;
+  padding: 10px 28px;
+  margin-bottom: 24px;
+}
+.intro-what {
+  background: var(--bronze-faint);
+  border-left: 3px solid var(--bronze);
+  padding: 20px 24px;
+  text-align: left;
+  margin-bottom: 28px;
+}
+.intro-what-title {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--bronze);
+  margin-bottom: 10px;
+}
+.intro-what-list {
+  list-style: none;
+  font-size: 13px;
+  color: var(--ink-mid);
+  line-height: 2;
+}
+.intro-what-list li::before {
+  content: '—  ';
+  color: var(--bronze);
+}
+.intro-disclaimer {
+  font-size: 11px;
+  color: var(--ink-faint);
+  line-height: 1.8;
+  border-top: 1px solid var(--parchment);
+  padding-top: 20px;
+}
+
+/* ── FORM SECTIONS ── */
+.form-section { display: none; }
+.form-section.active { display: block; }
+
+.section-eyebrow {
+  font-size: 9px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--bronze);
+  margin-bottom: 8px;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 200;
+  color: var(--forest);
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+.section-title em { font-style: italic; }
+.section-desc {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.9;
+  margin-bottom: 40px;
+  max-width: 520px;
+}
+
+/* ── FIELDS ── */
+.field { margin-bottom: 32px; }
+.field-label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ink-mid);
+  margin-bottom: 10px;
+}
+.field-label span {
+  color: var(--bronze);
+  margin-left: 4px;
+}
+.field-hint {
+  font-size: 12px;
+  color: var(--ink-faint);
+  margin-bottom: 10px;
+  line-height: 1.7;
+  font-style: italic;
+}
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  width: 100%;
+  background: white;
+  border: 1px solid rgba(158,125,78,0.25);
+  border-bottom: 2px solid var(--bronze);
+  padding: 14px 16px;
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 14px;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  border-radius: 0;
+  appearance: none;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--forest);
+  border-bottom-color: var(--forest);
+  background: var(--bronze-faint);
+}
+textarea { min-height: 100px; resize: vertical; }
+
+/* Radio / Yes-No */
+.radio-group { display: flex; gap: 16px; flex-wrap: wrap; }
+.radio-option {
+  flex: 1;
+  min-width: 120px;
+  cursor: pointer;
+}
+.radio-option input { display: none; }
+.radio-label {
+  display: block;
+  padding: 14px 20px;
+  border: 1px solid rgba(158,125,78,0.25);
+  border-bottom: 2px solid var(--bronze);
+  background: white;
+  text-align: center;
+  font-size: 13px;
+  color: var(--ink-mid);
+  transition: all 0.2s;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+.radio-option input:checked + .radio-label {
+  background: var(--forest);
+  color: var(--bronze-pale);
+  border-color: var(--forest);
+}
+.radio-option:hover .radio-label {
+  background: var(--bronze-faint);
+}
+
+/* Conditional field */
+.conditional-field {
+  display: none;
+  margin-top: 16px;
+  padding: 20px;
+  background: var(--bronze-faint);
+  border-left: 3px solid var(--bronze);
+}
+.conditional-field.visible { display: block; }
+
+/* Photo guidance box */
+.photo-guide {
+  background: var(--forest);
+  color: var(--bronze-pale);
+  padding: 32px;
+  margin-bottom: 32px;
+}
+.photo-guide-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 200;
+  margin-bottom: 20px;
+  color: var(--bronze-pale);
+}
+.photo-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.photo-guide-item {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(212,184,150,0.2);
+  padding: 16px;
+  text-align: center;
+}
+.photo-guide-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 200;
+  color: var(--bronze);
+  display: block;
+  margin-bottom: 6px;
+}
+.photo-guide-name {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--bronze-pale);
+}
+.photo-rules {
+  list-style: none;
+  font-size: 12px;
+  color: rgba(212,184,150,0.8);
+  line-height: 2;
+}
+.photo-rules li::before { content: '— '; color: var(--bronze); }
+
+/* Consent checkbox */
+.consent-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--parchment);
+}
+.consent-item:last-child { border-bottom: none; }
+.consent-item input[type="checkbox"] { display: none; }
+.consent-check {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  border: 1px solid var(--bronze);
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  transition: background 0.2s;
+}
+.consent-item input:checked + .consent-check {
+  background: var(--forest);
+}
+.consent-item input:checked + .consent-check::after {
+  content: '✓';
+  color: var(--bronze-pale);
+  font-size: 13px;
+}
+.consent-text {
+  font-size: 13px;
+  color: var(--ink-mid);
+  line-height: 1.8;
+  cursor: pointer;
+}
+
+/* Legal box */
+.legal-box {
+  background: white;
+  border: 1px solid rgba(158,125,78,0.2);
+  border-left: 3px solid var(--bronze);
+  padding: 24px;
+  margin-bottom: 32px;
+  font-size: 12px;
+  color: var(--ink-soft);
+  line-height: 1.9;
+}
+.legal-box strong { color: var(--ink-mid); }
+
+/* ── NAVIGATION ── */
+.nav-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--parchment);
+}
+.btn-back {
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 12px 0;
+  transition: color 0.2s;
+}
+.btn-back:hover { color: var(--ink-mid); }
+.btn-next {
+  background: var(--forest);
+  color: var(--bronze-pale);
+  border: none;
+  padding: 16px 36px;
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-next:hover { background: var(--forest-mid); color: var(--bronze-pale); }
+.btn-submit {
+  background: var(--bronze);
+  color: white;
+  border: none;
+  padding: 18px 40px;
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-submit:hover { background: #8a6d40; }
+
+/* ── THANK YOU ── */
+.thankyou { display: none; text-align: center; padding: 80px 40px; }
+.thankyou.active { display: block; }
+.thankyou-seal {
+  width: 60px;
+  height: 60px;
+  border: 1px solid var(--bronze);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 32px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  color: var(--bronze);
+}
+.thankyou-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px;
+  font-weight: 200;
+  color: var(--forest);
+  margin-bottom: 16px;
+}
+.thankyou-body {
+  font-size: 13px;
+  color: var(--ink-soft);
+  max-width: 440px;
+  margin: 0 auto 40px;
+  line-height: 2;
+}
+.thankyou-next {
+  background: var(--bronze-faint);
+  border-left: 3px solid var(--bronze);
+  padding: 24px 28px;
+  text-align: left;
+  max-width: 440px;
+  margin: 0 auto;
+}
+.thankyou-next-title {
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--bronze);
+  margin-bottom: 10px;
+}
+.thankyou-next-list {
+  list-style: none;
+  font-size: 13px;
+  color: var(--ink-mid);
+  line-height: 2.2;
+}
+.thankyou-next-list li::before { content: '— '; color: var(--bronze); }
+
+@media (max-width: 600px) {
+  .main { padding: 40px 20px 80px; }
+  .site-header { padding: 16px 20px; }
+  .progress-inner { padding: 14px 20px; }
+  .intro-panel { padding: 40px 20px; }
+  .photo-guide-grid { grid-template-columns: 1fr; }
+  .intro-title { font-size: 32px; }
+  .section-title { font-size: 28px; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-brand">The Skin Sage</div>
+  <div class="header-tier">The Score &nbsp;·&nbsp; £25</div>
+</header>
+
+<div class="progress-wrap">
+  <div class="progress-inner">
+    <div class="progress-bar-track">
+      <div class="progress-bar-fill" id="progress-fill"></div>
+    </div>
+    <div class="progress-text" id="progress-text">Step 1 of 5</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- ── INTRO ── -->
+  <div id="intro-panel" class="intro-panel">
+    <div class="intro-eyebrow">The Skin Sage · The Score</div>
+    <h1 class="intro-title">Your skin,<br><em>scored.</em></h1>
+    <p class="intro-body">Five minutes. Three photos. A clear picture of where your skin is right now — scored across five categories and delivered as a locked PDF.</p>
+    <div class="intro-price">The Score &nbsp;·&nbsp; £25</div>
+    <div class="intro-what">
+      <div class="intro-what-title">What you will receive</div>
+      <ul class="intro-what-list">
+        <li>Skin wellness score across five categories</li>
+        <li>One clear sentence explaining each score</li>
+        <li>What your score means for your skin right now</li>
+        <li>Delivered as a locked PDF within 48 hours</li>
+      </ul>
+    </div>
+    <p class="intro-disclaimer">All scores are based on photographic observation and information declared at the time of assessment. This is not a clinical diagnosis. Not a medical service.</p>
+    <br>
+    <button class="btn-next" onclick="showSection(1)">Begin &nbsp;→</button>
+  </div>
+
+  <!-- ── FORM ── -->
+  <form id="score-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <input type="hidden" name="_subject" value="New Score Submission — The Skin Sage">
+
+    <!-- SECTION 1 — Name & contact -->
+    <div class="form-section" id="section-1">
+      <div class="section-eyebrow">Step 1 of 5</div>
+      <h2 class="section-title">Your<br><em>details.</em></h2>
+      <p class="section-desc">Just your name and email so we know who to send your scorecard to.</p>
+
+      <div class="field">
+        <label class="field-label">First name <span>*</span></label>
+        <input type="text" name="first_name" required placeholder="Your first name">
+      </div>
+      <div class="field">
+        <label class="field-label">Email address <span>*</span></label>
+        <p class="field-hint">Your scorecard PDF will be sent to this address within 48 hours.</p>
+        <input type="email" name="email" required placeholder="your@email.com">
+      </div>
+
+      <div class="nav-wrap">
+        <button type="button" class="btn-back" onclick="showIntro()">← Back</button>
+        <button type="button" class="btn-next" onclick="nextSection(1)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- SECTION 2 — Skin conditions -->
+    <div class="form-section" id="section-2">
+      <div class="section-eyebrow">Step 2 of 5</div>
+      <h2 class="section-title">Known skin<br><em>conditions.</em></h2>
+      <p class="section-desc">Some diagnosed conditions affect what we see in photographs. This protects you from receiving a score that doesn't reflect what is actually happening with your skin.</p>
+
+      <div class="field">
+        <label class="field-label">Do you have any skin conditions that have been diagnosed by a doctor or dermatologist? <span>*</span></label>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="skin_conditions" value="No" required onchange="toggleConditional('conditions-detail', false)">
+            <span class="radio-label">No</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="skin_conditions" value="Yes" onchange="toggleConditional('conditions-detail', true)">
+            <span class="radio-label">Yes</span>
+          </label>
+        </div>
+        <div class="conditional-field" id="conditions-detail">
+          <label class="field-label">Please briefly describe <span>*</span></label>
+          <p class="field-hint">For example: eczema, rosacea, psoriasis, melasma, seborrhoeic dermatitis. You do not need to provide full medical history — just the condition name is sufficient.</p>
+          <textarea name="conditions_detail" placeholder="e.g. Rosacea diagnosed 2021, currently managed with topical treatment"></textarea>
+        </div>
+      </div>
+
+      <div class="nav-wrap">
+        <button type="button" class="btn-back" onclick="prevSection(2)">← Back</button>
+        <button type="button" class="btn-next" onclick="nextSection(2)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- SECTION 3 — Medications -->
+    <div class="form-section" id="section-3">
+      <div class="section-eyebrow">Step 3 of 5</div>
+      <h2 class="section-title">Skin<br><em>medications.</em></h2>
+      <p class="section-desc">Certain medications change how your skin looks and behaves significantly. We need to know this before scoring.</p>
+
+      <div class="field">
+        <label class="field-label">Are you currently taking any medication that affects your skin — such as Roaccutane, oral steroids, chemotherapy or immunosuppressants? <span>*</span></label>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="medications" value="No" required onchange="toggleConditional('medications-detail', false)">
+            <span class="radio-label">No</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="medications" value="Yes" onchange="toggleConditional('medications-detail', true)">
+            <span class="radio-label">Yes</span>
+          </label>
+        </div>
+        <div class="conditional-field" id="medications-detail">
+          <label class="field-label">Please briefly describe <span>*</span></label>
+          <p class="field-hint">Medication name only is sufficient. You do not need to share dosage or full medical history.</p>
+          <textarea name="medications_detail" placeholder="e.g. Roaccutane, started January 2025"></textarea>
+        </div>
+      </div>
+
+      <div class="nav-wrap">
+        <button type="button" class="btn-back" onclick="prevSection(3)">← Back</button>
+        <button type="button" class="btn-next" onclick="nextSection(3)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- SECTION 4 — Photo declaration -->
+    <div class="form-section" id="section-4">
+      <div class="section-eyebrow">Step 4 of 5</div>
+      <h2 class="section-title">Your<br><em>photos.</em></h2>
+      <p class="section-desc">Your scorecard is based on what your photographs show. Please follow the guidance below carefully — unclear or made-up photos will result in an inaccurate score.</p>
+
+      <div class="photo-guide">
+        <div class="photo-guide-title">Three photos required</div>
+        <div class="photo-guide-grid">
+          <div class="photo-guide-item">
+            <span class="photo-guide-num">01</span>
+            <div class="photo-guide-name">Front facing</div>
+          </div>
+          <div class="photo-guide-item">
+            <span class="photo-guide-num">02</span>
+            <div class="photo-guide-name">Right profile</div>
+          </div>
+          <div class="photo-guide-item">
+            <span class="photo-guide-num">03</span>
+            <div class="photo-guide-name">Left profile</div>
+          </div>
+        </div>
+        <ul class="photo-rules">
+          <li>Natural daylight only — no flash, no ring light</li>
+          <li>No makeup, no filter, no editing</li>
+          <li>Hair pulled back so the full face is visible</li>
+          <li>Neutral expression, eyes forward for front photo</li>
+          <li>Send photos by email to hello@theskinsage.com after submitting this form</li>
+        </ul>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Is there anything on your face in these photos? <span>*</span></label>
+        <p class="field-hint">Makeup, SPF, moisturiser, facial oils, Botox or filler all affect what we see. Please be honest — this protects the accuracy of your score.</p>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="face_products" value="No — clean bare skin" required>
+            <span class="radio-label">No — bare skin</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="face_products" value="Yes" onchange="toggleConditional('products-detail', true)">
+            <span class="radio-label">Yes</span>
+          </label>
+        </div>
+        <div class="conditional-field" id="products-detail">
+          <label class="field-label">Please describe what is on your face <span>*</span></label>
+          <p class="field-hint">For example: moisturiser applied this morning, SPF only, no makeup. If you have had Botox or filler, please include approximate date.</p>
+          <textarea name="products_detail" placeholder="e.g. SPF applied this morning, no makeup, filler in lips 6 months ago"></textarea>
+        </div>
+      </div>
+
+      <div class="nav-wrap">
+        <button type="button" class="btn-back" onclick="prevSection(4)">← Back</button>
+        <button type="button" class="btn-next" onclick="nextSection(4)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- SECTION 5 — Consent & submit -->
+    <div class="form-section" id="section-5">
+      <div class="section-eyebrow">Step 5 of 5</div>
+      <h2 class="section-title">Before we<br><em>begin.</em></h2>
+      <p class="section-desc">Please read and confirm the following before we start your assessment.</p>
+
+      <div class="legal-box">
+        <strong>What The Score is:</strong> A photo-based skin wellness scorecard across five categories. Scores reflect visible surface indicators and declared information only.<br><br>
+        <strong>What The Score is not:</strong> A clinical diagnosis, a medical assessment, a prescription or a treatment plan. The Skin Sage does not diagnose or treat medical skin conditions.<br><br>
+        <strong>Your responsibility:</strong> If you have a diagnosed skin condition or are under dermatological or medical care, please consult your clinician before making any changes to your routine based on this scorecard. If anything in your scorecard causes you concern, please speak to your GP.
+      </div>
+
+      <div class="field">
+        <label class="consent-item" for="consent-1">
+          <input type="checkbox" id="consent-1" name="consent_service" value="confirmed" required>
+          <span class="consent-check"></span>
+          <span class="consent-text">I understand that The Score is a photo-based educational assessment and not a clinical or medical service.</span>
+        </label>
+        <label class="consent-item" for="consent-2">
+          <input type="checkbox" id="consent-2" name="consent_photos" value="confirmed" required>
+          <span class="consent-check"></span>
+          <span class="consent-text">I confirm that the photos I am submitting are of myself, taken in natural light, without makeup or filters, and that the information I have declared is accurate.</span>
+        </label>
+        <label class="consent-item" for="consent-3">
+          <input type="checkbox" id="consent-3" name="consent_data" value="confirmed" required>
+          <span class="consent-text">I consent to The Skin Sage processing the information and photos I have provided for the sole purpose of producing my scorecard, in accordance with UK GDPR. My data will not be shared with third parties.</span>
+          <input type="checkbox" id="consent-3" name="consent_data" value="confirmed" required>
+          <span class="consent-check"></span>
+        </label>
+      </div>
+
+      <div class="nav-wrap">
+        <button type="button" class="btn-back" onclick="prevSection(5)">← Back</button>
+        <button type="submit" class="btn-submit">Submit my form →</button>
+      </div>
+    </div>
+
+  </form>
+
+  <!-- ── THANK YOU ── -->
+  <div class="thankyou" id="thankyou">
+    <div class="thankyou-seal">✦</div>
+    <h2 class="thankyou-title">Thank you,<br><em>we have you.</em></h2>
+    <p class="thankyou-body">Your form has been received. Your scorecard will be with you within 48 hours. There is one thing left to do.</p>
+    <div class="thankyou-next">
+      <div class="thankyou-next-title">Your next step</div>
+      <ul class="thankyou-next-list">
+        <li>Email your three photos to hello@theskinsage.com</li>
+        <li>Subject line: your first name + The Score</li>
+        <li>Front facing · Right profile · Left profile</li>
+        <li>Natural light · No makeup · No filter</li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- /main -->
+
+<script>
+const TOTAL = 5;
+
+function updateProgress(step) {
+  const pct = step === 0 ? 0 : Math.round((step / TOTAL) * 100);
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-text').textContent =
+    step === 0 ? 'Introduction' : `Step ${step} of ${TOTAL}`;
+}
+
+function showIntro() {
+  document.querySelectorAll('.form-section').forEach(s => s.classList.remove('active'));
+  document.getElementById('intro-panel').style.display = 'block';
+  updateProgress(0);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showSection(n) {
+  document.getElementById('intro-panel').style.display = 'none';
+  document.querySelectorAll('.form-section').forEach(s => s.classList.remove('active'));
+  document.getElementById(`section-${n}`).classList.add('active');
+  updateProgress(n);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function nextSection(current) {
+  const section = document.getElementById(`section-${current}`);
+  const required = section.querySelectorAll('[required]');
+  let valid = true;
+  required.forEach(field => {
+    if (field.type === 'radio') {
+      const name = field.name;
+      const checked = section.querySelector(`[name="${name}"]:checked`);
+      if (!checked) { valid = false; field.closest('.radio-group').style.outline = '2px solid #8b3a3a'; }
+      else { field.closest('.radio-group').style.outline = 'none'; }
+    } else if (field.type === 'checkbox') {
+      if (!field.checked) { valid = false; }
+    } else {
+      if (!field.value.trim()) { valid = false; field.style.borderBottomColor = '#8b3a3a'; }
+      else { field.style.borderBottomColor = ''; }
+    }
+  });
+  if (valid) showSection(current + 1);
+  else window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function prevSection(current) {
+  if (current <= 1) showIntro();
+  else showSection(current - 1);
+}
+
+function toggleConditional(id, show) {
+  const el = document.getElementById(id);
+  if (show) el.classList.add('visible');
+  else el.classList.remove('visible');
+}
+
+// Handle Formspree submission
+document.getElementById('score-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      document.querySelectorAll('.form-section').forEach(s => s.classList.remove('active'));
+      document.getElementById('thankyou').classList.add('active');
+      document.getElementById('progress-fill').style.width = '100%';
+      document.getElementById('progress-text').textContent = 'Complete';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  } catch (err) {
+    alert('Something went wrong. Please email hello@theskinsage.com directly.');
+  }
+});
+
+// Init
+updateProgress(0);
+</script>
+</body>
+</html>
