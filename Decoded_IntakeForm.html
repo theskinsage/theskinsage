@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Skin Sage · Decoded · Intake Form</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Didact+Gothic&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #f7f3ee;
+  --warm: #ede7dc;
+  --parchment: #e4ddd2;
+  --forest: #1c2e20;
+  --forest-mid: #243828;
+  --bronze: #9e7d4e;
+  --bronze-pale: #d4b896;
+  --bronze-faint: #f0e8dc;
+  --ink: #1a1a18;
+  --ink-mid: #3d3d38;
+  --ink-soft: #6e6e64;
+  --ink-faint: #a0a094;
+  --error: #8b3a3a;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--cream); color: var(--ink); font-family: 'Didact Gothic', sans-serif; font-size: 14px; line-height: 1.9; min-height: 100vh; }
+
+.site-header { background: var(--forest); padding: 18px 40px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(158,125,78,0.25); }
+.header-brand { font-family: 'Cormorant Garamond', serif; font-size: 11px; letter-spacing: 7px; text-transform: uppercase; color: var(--bronze-pale); }
+.header-tier { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: rgba(212,184,150,0.5); }
+
+.progress-wrap { background: var(--parchment); border-bottom: 1px solid rgba(158,125,78,0.15); }
+.progress-inner { max-width: 740px; margin: 0 auto; padding: 16px 40px; display: flex; align-items: center; gap: 20px; }
+.progress-bar-track { flex: 1; height: 2px; background: rgba(158,125,78,0.15); border-radius: 1px; overflow: hidden; }
+.progress-bar-fill { height: 100%; background: var(--bronze); border-radius: 1px; transition: width 0.5s ease; width: 0%; }
+.progress-text { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--bronze); white-space: nowrap; }
+
+.main { max-width: 740px; margin: 0 auto; padding: 60px 40px 100px; }
+
+.intro-panel { text-align: center; padding: 60px 40px; border: 1px solid rgba(158,125,78,0.2); background: white; margin-bottom: 60px; }
+.intro-eyebrow { font-size: 9px; letter-spacing: 5px; text-transform: uppercase; color: var(--bronze); margin-bottom: 20px; }
+.intro-title { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 200; color: var(--forest); line-height: 1.2; margin-bottom: 16px; }
+.intro-title em { font-style: italic; color: var(--bronze); }
+.intro-body { font-size: 13px; color: var(--ink-soft); max-width: 480px; margin: 0 auto 32px; line-height: 1.9; }
+.intro-price { display: inline-block; background: var(--forest); color: var(--bronze-pale); font-family: 'Cormorant Garamond', serif; font-size: 14px; letter-spacing: 3px; padding: 10px 28px; margin-bottom: 24px; }
+.intro-what { background: var(--bronze-faint); border-left: 3px solid var(--bronze); padding: 20px 24px; text-align: left; margin-bottom: 28px; }
+.intro-what-title { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--bronze); margin-bottom: 10px; }
+.intro-what-list { list-style: none; font-size: 13px; color: var(--ink-mid); line-height: 2; }
+.intro-what-list li::before { content: '—  '; color: var(--bronze); }
+.intro-disclaimer { font-size: 11px; color: var(--ink-faint); line-height: 1.8; border-top: 1px solid var(--parchment); padding-top: 20px; }
+
+.form-section { display: none; }
+.form-section.active { display: block; }
+.section-eyebrow { font-size: 9px; letter-spacing: 5px; text-transform: uppercase; color: var(--bronze); margin-bottom: 8px; }
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 200; color: var(--forest); line-height: 1.2; margin-bottom: 10px; }
+.section-title em { font-style: italic; }
+.section-desc { font-size: 13px; color: var(--ink-soft); line-height: 1.9; margin-bottom: 40px; max-width: 520px; }
+
+.field { margin-bottom: 32px; }
+.field-label { display: block; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--ink-mid); margin-bottom: 10px; }
+.field-label span { color: var(--bronze); margin-left: 4px; }
+.field-optional { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-faint); margin-left: 8px; }
+.field-hint { font-size: 12px; color: var(--ink-faint); margin-bottom: 10px; line-height: 1.7; font-style: italic; }
+input[type="text"], input[type="email"], textarea, select { width: 100%; background: white; border: 1px solid rgba(158,125,78,0.25); border-bottom: 2px solid var(--bronze); padding: 14px 16px; font-family: 'Didact Gothic', sans-serif; font-size: 14px; color: var(--ink); outline: none; transition: border-color 0.2s, background 0.2s; border-radius: 0; appearance: none; }
+input:focus, textarea:focus, select:focus { border-color: var(--forest); border-bottom-color: var(--forest); background: var(--bronze-faint); }
+textarea { min-height: 110px; resize: vertical; }
+
+.radio-group { display: flex; gap: 12px; flex-wrap: wrap; }
+.radio-option { flex: 1; min-width: 100px; cursor: pointer; }
+.radio-option input { display: none; }
+.radio-label { display: block; padding: 12px 16px; border: 1px solid rgba(158,125,78,0.25); border-bottom: 2px solid var(--bronze); background: white; text-align: center; font-size: 12px; color: var(--ink-mid); transition: all 0.2s; cursor: pointer; letter-spacing: 1px; }
+.radio-option input:checked + .radio-label { background: var(--forest); color: var(--bronze-pale); border-color: var(--forest); }
+.radio-option:hover .radio-label { background: var(--bronze-faint); }
+
+.conditional-field { display: none; margin-top: 16px; padding: 20px; background: var(--bronze-faint); border-left: 3px solid var(--bronze); }
+.conditional-field.visible { display: block; }
+
+.product-block { background: white; border: 1px solid rgba(158,125,78,0.2); border-left: 3px solid var(--bronze); padding: 24px; margin-bottom: 20px; }
+.product-block-title { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--bronze); margin-bottom: 16px; }
+.product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+@media(max-width:520px){ .product-grid { grid-template-columns: 1fr; } }
+
+.photo-guide { background: var(--forest); color: var(--bronze-pale); padding: 32px; margin-bottom: 32px; }
+.photo-guide-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 200; margin-bottom: 20px; }
+.photo-guide-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
+@media(max-width:520px){ .photo-guide-grid { grid-template-columns: repeat(2,1fr); } }
+.photo-guide-item { background: rgba(255,255,255,0.05); border: 1px solid rgba(212,184,150,0.2); padding: 14px; text-align: center; }
+.photo-guide-num { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 200; color: var(--bronze); display: block; margin-bottom: 6px; }
+.photo-guide-name { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--bronze-pale); }
+.photo-rules { list-style: none; font-size: 12px; color: rgba(212,184,150,0.8); line-height: 2; }
+.photo-rules li::before { content: '— '; color: var(--bronze); }
+
+.consent-item { display: flex; gap: 16px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid var(--parchment); }
+.consent-item:last-child { border-bottom: none; }
+.consent-item input[type="checkbox"] { display: none; }
+.consent-check { width: 22px; height: 22px; flex-shrink: 0; border: 1px solid var(--bronze); background: white; cursor: pointer; display: flex; align-items: center; justify-content: center; margin-top: 2px; transition: background 0.2s; }
+.consent-item input:checked + .consent-check { background: var(--forest); }
+.consent-item input:checked + .consent-check::after { content: '✓'; color: var(--bronze-pale); font-size: 13px; }
+.consent-text { font-size: 13px; color: var(--ink-mid); line-height: 1.8; cursor: pointer; }
+
+.legal-box { background: white; border: 1px solid rgba(158,125,78,0.2); border-left: 3px solid var(--bronze); padding: 24px; margin-bottom: 32px; font-size: 12px; color: var(--ink-soft); line-height: 1.9; }
+.legal-box strong { color: var(--ink-mid); }
+.info-box { background: var(--bronze-faint); border-left: 3px solid var(--bronze); padding: 16px 20px; margin-bottom: 24px; font-size: 12px; color: var(--ink-soft); line-height: 1.8; }
+
+.nav-wrap { display: flex; justify-content: space-between; align-items: center; margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--parchment); }
+.btn-back { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--ink-faint); background: none; border: none; cursor: pointer; padding: 12px 0; transition: color 0.2s; }
+.btn-back:hover { color: var(--ink-mid); }
+.btn-next { background: var(--forest); color: var(--bronze-pale); border: none; padding: 16px 36px; font-family: 'Didact Gothic', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
+.btn-next:hover { background: var(--forest-mid); }
+.btn-submit { background: var(--bronze); color: white; border: none; padding: 18px 40px; font-family: 'Didact Gothic', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
+.btn-submit:hover { background: #8a6d40; }
+
+.thankyou { display: none; text-align: center; padding: 80px 40px; }
+.thankyou.active { display: block; }
+.thankyou-seal { width: 60px; height: 60px; border: 1px solid var(--bronze); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 32px; font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--bronze); }
+.thankyou-title { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 200; color: var(--forest); margin-bottom: 16px; }
+.thankyou-body { font-size: 13px; color: var(--ink-soft); max-width: 440px; margin: 0 auto 40px; line-height: 2; }
+.thankyou-next { background: var(--bronze-faint); border-left: 3px solid var(--bronze); padding: 24px 28px; text-align: left; max-width: 440px; margin: 0 auto; }
+.thankyou-next-title { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--bronze); margin-bottom: 10px; }
+.thankyou-next-list { list-style: none; font-size: 13px; color: var(--ink-mid); line-height: 2.2; }
+.thankyou-next-list li::before { content: '— '; color: var(--bronze); }
+
+@media(max-width:600px){
+  .main { padding: 40px 20px 80px; }
+  .site-header { padding: 16px 20px; }
+  .progress-inner { padding: 14px 20px; }
+  .intro-panel { padding: 40px 20px; }
+  .intro-title, .section-title { font-size: 30px; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-brand">The Skin Sage</div>
+  <div class="header-tier">Decoded &nbsp;·&nbsp; £145</div>
+</header>
+
+<div class="progress-wrap">
+  <div class="progress-inner">
+    <div class="progress-bar-track">
+      <div class="progress-bar-fill" id="progress-fill"></div>
+    </div>
+    <div class="progress-text" id="progress-text">Introduction</div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- INTRO -->
+  <div id="intro-panel" class="intro-panel">
+    <div class="intro-eyebrow">The Skin Sage · Decoded</div>
+    <h1 class="intro-title">The full<br><em>picture.</em></h1>
+    <p class="intro-body">Every product reviewed. Every internal driver identified. A corrected routine built around your skin. The complete Decoded assessment takes around 10 minutes to complete — and gives us everything we need to give you the full picture.</p>
+    <div class="intro-price">Decoded &nbsp;·&nbsp; £145</div>
+    <div class="intro-what">
+      <div class="intro-what-title">What you will receive</div>
+      <ul class="intro-what-list">
+        <li>Full skin wellness score across five categories</li>
+        <li>Skin structural age assessment</li>
+        <li>Complete photo assessment — front, both profiles, close-up</li>
+        <li>What is driving your skin concerns internally</li>
+        <li>Full review of every product in your current routine</li>
+        <li>Honest assessment — what is working and what is not</li>
+        <li>Corrected morning and evening routine</li>
+        <li>Ingredient guidance — what to look for and why</li>
+        <li>Clinically correct lymphatic self massage technique</li>
+        <li>Two week follow-up — after photos reviewed</li>
+        <li>Delivered as a locked PDF within 48 hours</li>
+      </ul>
+    </div>
+    <p class="intro-disclaimer">All observations are photo-observed and based on declared information only. Not a clinical diagnosis. Not a medical service.</p>
+    <br>
+    <button class="btn-next" onclick="showSection(1)">Begin &nbsp;→</button>
+  </div>
+
+  <!-- FORM -->
+  <form id="decoded-form" action="https://formspree.io/f/YOUR_DECODED_FORM_ID" method="POST">
+    <input type="hidden" name="_subject" value="New Decoded Submission — The Skin Sage">
+
+    <!-- SECTION 1 — About you -->
+    <div class="form-section" id="section-1">
+      <div class="section-eyebrow">Step 1 of 7</div>
+      <h2 class="section-title">About<br><em>you.</em></h2>
+      <p class="section-desc">The basics so we know who we are preparing your report for.</p>
+
+      <div class="field">
+        <label class="field-label" for="preferred_name">What name would you like us to use in your report? <span>*</span></label>
+        <p class="field-hint">Use whatever name feels right to you.</p>
+        <input type="text" id="preferred_name" name="preferred_name" required placeholder="e.g. Gabriella, Gabi, Alex">
+      </div>
+      <div class="field">
+        <label class="field-label" for="pronouns">Pronouns <span class="field-optional">optional</span></label>
+        <p class="field-hint">e.g. she/her, he/him, they/them</p>
+        <input type="text" id="pronouns" name="pronouns" placeholder="e.g. she/her">
+      </div>
+      <div class="field">
+        <label class="field-label" for="email">Email address <span>*</span></label>
+        <p class="field-hint">Your Decoded report PDF will be sent here within 48 hours of receiving your photos.</p>
+        <input type="email" id="email" name="email" required placeholder="your@email.com">
+      </div>
+      <div class="field">
+        <label class="field-label" for="age_range">Age range <span>*</span></label>
+        <select id="age_range" name="age_range" required>
+          <option value="" disabled selected>Select your age range</option>
+          <option>Under 18</option>
+          <option>18–25</option>
+          <option>26–35</option>
+          <option>36–45</option>
+          <option>46–55</option>
+          <option>56+</option>
+        </select>
+      </div>
+
+      <div class="nav-wrap">
+        <button type="button" class="btn-back" onclick="showIntro()">← Back</button>
+        <button type="button" class="btn-next" onclick="nextSection(1)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- SECTION 2 — Skin concerns -->
+    <div class="form-section" id="section-2">
+      <div class="section-eyebrow">Step 2 of 7</div>
+      <h2 class="section-title">Your skin<br><em>concerns.</em></h2>
+      <p class="section-desc">Tell us what brought you here and what you have already tried. Be as honest as you like — the more we know, the more accurate your assessment will be.</p>
+
+      <div class="field">
+        <label class="field-label" for="main_concern">What are your main skin concerns? <span>*</span></label>
+        <p class="field-hint">List everything that concerns you — pigmentation, breakouts, texture, dullness, scarring, dryness, oiliness, sensitivity. You can list more than one.</p>
+        <textarea id="main_concern" name="main_concern" required placeholder="e.g. Dark marks from old spots that won't fade, rough texture, occasional breakouts along my jawline, skin looks dull"></textarea>
+      </div>
+      <div class="field">
+        <label class="field-label" for="concern_duration">How long have these concerns been present? <span>*</span></label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="concern_duration" value="Under 6 months" required><span class="radio-label">Under 6 months</span></label>
+          <label class="radio-option"><input type="radio" name="concern_duration" value="6–12 months"><span class="radio-label">6–12 months</span></label>
+          <label class="radio-option"><input type="radio" name="concern_duration" value="1–3 years"><span class="radio-label">1–3 years</span></label>
+          <label class="radio-option"><input type="radio" name="concern_duration" value="3+ years"><span class="radio-label">3+ years</span></label>
+        </div>
+      </div>
+      <div class="field">
+        <label class="field-label" for="previous_attempts">Have you tried anything specifically to address these concerns before? <span>*</span></label>
+        <p class="field-hint">Treatments, products, facials, prescribed creams, GP visits — anything. Include what worked and what did not.</p>
+        <textarea id="previous_attempts" name="previous_attempts" required placeholder="e.g. Tried vitamin C serum but it irritated my skin. Had a facial once but no lasting improvement. GP referred me to dermatologist 2 years ago — prescribed a cream but I stopped using it"></textarea>
+      </div>
+
+      <div class="nav-wrap">
+        <button type="button" class="btn-back" onclick="prevSection(2)">← Back</button>
+        <button type="button" class="btn-next" onclick="nextSection(2)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- SECTION 3 — Full product inventory -->
+    <div class="form-section" id="section-3">
+      <div class="section-eyebrow">Step 3 of 7</div>
+      <h2 class="section-title">Your complete<br><em>routine.</em></h2>
+      <p class="section-desc">List every single product you put on your face — morning, evening, or both. This includes cleansers, toners, serums, moisturisers, SPF, oils, masks, eye creams, anything. If you have no routine, say so in Product 1.</p>
+
+      <div class="info-box">
+        You do not need to know the exact brand or full name. A description is fine — e.g. "blue tube moisturiser from Boots" or "pink cleanser, can't remember the name." Honesty matters more than precision.
+      </div>
+
+      <!-- Product 1 -->
+      <div class="product-block">
+        <div class="product-block-title">Product 1 <span style="color:#a0a094;font-size:9px;letter-spacing:2px;">REQUIRED</span></div>
+        <div class="field"><input type="text" name="product_1_name" required placeholder="Product name or description — or write 'no routine'"></div>
+        <div class="product-grid">
+          <div>
+            <label class="field-label">When do you use it?</label>
+            <select name="product_1_when">
+              <option value="">Select</option>
+              <option>Morning only</option>
+              <option>Evening only</option>
+              <option>Morning and evening</option>
+              <option>Occasionally</option>
+            </select>
+          </div>
+          <div>
+            <label class="field-label">How long have you used it?</label>
+            <select name="product_1_duration">
+              <option value="">Select</option>
+              <option>Less than 1 month</option>
+              <option>1–3 months</option>
+              <option>3–6 months</option>
+              <option>6–12 months</option>
+              <option>Over a year</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label class="field-label">What do you think of it? <span class="field-optional">optional</span></label>
+          <input type="text" name="product_1_opinion" placeholder="e.g. Skin feels softer but spots haven't improved">
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-block">
+        <div class="product-block-title">Product 2 <span style="color:#a0a094;font-size:9px;letter-spacing:2px;">OPTIONAL</span></div>
+        <div class="field"><input type="text" name="product_2_name" placeholder="Product name or description"></div>
+        <div class="product-grid">
+          <div>
+            <label class="field-label">When do you use it?</label>
+            <select name="product_2_when"><option value="">Select</option><option>Morning only</option><option>Evening only</option><option>Morning and evening</option><option>Occasionally</option></select>
+          </div>
+          <div>
+            <label class="field-label">How long have you used it?</label>
+            <select name="product_2_duration"><option value="">Select</option><option>Less than 1 month</option><option>1–3 months</option><option>3–6 months</option><option>6–12 months</option><option>Over a year</option></select>
+          </div>
+        </div>
+        <div class="field"><input type="text" name="product_2_opinion" placeholder="What do you think of it?"></div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-block">
+        <div class="product-block-title">Product 3 <span style="color:#a0a094;font-size:9px;letter-spacing:2px;">OPTIONAL</span></div>
+        <div class="field"><input type="text" name="product_3_name" placeholder="Product name or description"></div>
+        <div class="product-grid">
+          <div>
+            <label class="field-label">When do you use it?</label>
+            <select name="product_3_when"><option value="">Select</option><option>Morning only</option><option>Evening only</option><option>Morning and evening</option><option>Occasionally</option></select>
+          </div>
+          <div>
+            <label class="field-label">How long have you used it?</label>
+            <select name="product_3_duration"><option value="">Select</option><option>Less than 1 month</option><option>1–3 months</option><option>3–6 months</option><option>6–12 months</option><option>Over a year</option></select>
+          </div>
+        </div>
+        <div class="field"><input type="text" name="product_3_opinion" placeholder="What do you think of it?"></div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-block">
+        <div class="product-block-title">Product 4 <span style="color:#a0a094;font-size:9px;letter-spacing:2px;">OPTIONAL</span></div>
+        <div class="field"><input type="text" name="product_4_name" placeholder="Product name or description"></div>
+        <div class="product-grid">
+          <div>
+            <label class="field-label">When do you use it?</label>
+            <select name="product_4_when"><option value="">Select</option><option>Morning only</option><option>Evening only</option><option>Morning and evening</option><option>Occasionally</option></select>
+          </div>
+          <div>
+            <label class="field-label">How long have you used it?</label>
+            <select name="product_4_duration"><option value="">Select</option><option>Less than 1 month</option><option>1–3 months</option><option>3–6 months</option><option>6–12 months</option><option>Over a year</option></select>
+          </div>
+        </div>
+        <div class="field"><input type="text" name="product_4_opinion" placeholder="What do you think of it?"></div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Anything else on your face not listed above? <span class="field-optional">optional</span></label>
+        <p class="field-hint">Prescription creams, medicated products, makeup worn daily, anything else.</p>
+        <textarea name="other_products" placeholder="e.g. Prescribed hydrocortisone cream used occasionally. Wear full coverage foundation daily."></textarea>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Have you ever had a reaction or sensitivity to a skincare ingredient?</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="sensitivities" value="No"><span class="radio-label">No</span></label>
+          <label class="radio-option"><input type="radio" name="sensitivities" value="Yes" onchange="toggleConditional('sensitivity-detail', true)"><span class="radio-label">Yes</span></label>
+          <label class="radio-option"><input type="radio" name="sensitivities" value="Not sure"><span class="radio-label">Not sure</span></label>
+        </div>
+        <div class="conditional-field" id="sensitivity-detail">
+          <label class="field-label">Please describe</label>
+          <p class="field-hint">Ingredient name if known, or just describe what happened — e.g. "retinol made my skin peel and burn"</p>
+          <textarea name="sensitivity_detail" placeholder="e.g. Vitamin C serum caused redness and stinging. Fragrance in moisturisers breaks me out."></textarea>
+        </div>
+      </div>
+
+      <div class="nav-wrap">
+        <button type="button" class="btn-back" onclick="prevSection(3)">← Back</button>
+        <button type="button" class="btn-next" onclick="nextSection(3)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- SECTION 4 — Lifestyle -->
+    <div class="form-section" id="section-4">
+      <div class="section-eyebrow">Step 4 of 7</div>
+      <h2 class="section-title">Your lifestyle<br><em>& internal health.</em></h2>
+      <p class="section-desc">Your skin reflects what is happening inside. These questions help us identify the internal drivers behind what we see in your photographs. All information is confidential.</p>
+
+      <div class="field">
+        <label class="field-label">Smoking status <span>*</span></label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="smoking" value="Non-smoker" required><span class="radio-label">Non-smoker</span></label>
+          <label class="radio-option"><input type="radio" name="smoking" value="Current smoker"><span class="radio-label">Current smoker</span></label>
+          <label class="radio-option"><input type="radio" name="smoking" value="Ex-smoker"><span class="radio-label">Ex-smoker</span></label>
+          <label class="radio-option"><input type="radio" name="smoking" value="Occasional"><span class="radio-label">Occasional</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Average sleep per night <span>*</span></label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="sleep" value="Under 5 hours" required><span class="radio-label">Under 5 hrs</span></label>
+          <label class="radio-option"><input type="radio" name="sleep" value="5–6 hours"><span class="radio-label">5–6 hrs</span></label>
+          <label class="radio-option"><input type="radio" name="sleep" value="7–8 hours"><span class="radio-label">7–8 hrs</span></label>
+          <label class="radio-option"><input type="radio" name="sleep" value="8+ hours"><span class="radio-label">8+ hrs</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Exercise frequency <span>*</span></label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="exercise" value="Rarely or never" required><span class="radio-label">Rarely</span></label>
+          <label class="radio-option"><input type="radio" name="exercise" value="1–2 times per week"><span class="radio-label">1–2× week</span></label>
+          <label class="radio-option"><input type="radio" name="exercise" value="3–4 times per week"><span class="radio-label">3–4× week</span></label>
+          <label class="radio-option"><input type="radio" name="exercise" value="5+ times per week"><span class="radio-label">5+ × week</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Daily water intake <span>*</span></label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="water" value="Less than 1 litre" required><span class="radio-label">Under 1L</span></label>
+          <label class="radio-option"><input type="radio" name="water" value="1–1.5 litres"><span class="radio-label">1–1.5L</span></label>
+          <label class="radio-option"><input type="radio" name="water" value="1.5–2 litres"><span class="radio-label">1.5–2L</span></label>
+          <label class="radio-option"><input type="radio" name="water" value="2+ litres"><span class="radio-label">2L+</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Current stress levels <span>*</span></label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="stress" value="Low" required><span class="radio-label">Low</span></label>
+          <label class="radio-option"><input type="radio" name="stress" value="Moderate"><span class="radio-label">Moderate</span></label>
+          <label class="radio-option"><input type="radio" name="stress" value="High"><span class="radio-label">High</span></label>
+          <label class="radio-option"><input type="radio" name="stress" value="Very high"><span class="radio-label">Very high</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Diet — how would you describe it? <span>*</span></label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="diet" value="Balanced and varied" required><span class="radio-label">Balanced</span></label>
+          <label class="radio-option"><input type="radio" name="diet" value="High in processed or sugary foods"><span class="radio-label">Processed / sugary</span></label>
+          <label class="radio-option"><input type="radio" name="diet" value="Vegetarian or vegan"><span class="radio-label">Vegan / veggie</span></label>
+          <label class="radio-option"><input type="radio" name="diet" value="Restricted — managing weight"><span class="radio-label">Calorie restricted</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Hormonal factors <span class="field-optional">optional</span></label>
+        <p class="field-hint">Hormones have a significant impact on skin. Share only what you are comfortable with.</p>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="hormonal" value="None relevant"><span class="radio-label">None relevant</span></label>
+          <label class="radio-option"><input type="radio" name="hormonal" value="On hormonal contraception"><span class="radio-label">Hormonal contraception</span></label>
+          <label class="radio-option"><input type="radio" name="hormonal" value="Perimenopausal or menopausal"><span class="radio-label">Peri / menopause</span></label>
+          <label class="radio-option"><input type="radio" name="hormonal" value="PCOS or hormonal condition"><span class="radio-label">PCOS / hormonal condition</span></label>
+          <label class="radio-option"><input type="radio" name="hormonal" value="Prefer not to say"><span class="radio-label">Prefer not to say</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Pillowcase changes <span>*</span></label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="pillowcase" value="Every 1–2 days" required><span class="radio-label">Every 1–2 days</span></label>
+          <label class="radio-option"><input type="radio" name="pillowcase" value="Every 3–4 days"><span class="radio-label">Every 3–4 days</span></label>
+          <label class="radio-option"><input type="radio" name="pillowcase" value="Once a week"><span class="radio-label">Once a week</span></label>
+          <label class="radio-option"><input type="radio" name="pillowcase" value="Less than once a week"><span class="radio-label">Less often</span></label>
+        </div>
+      </div>
+
+      <div class="nav-wrap">
+        <button type="button" class="btn-back" onclick="prevSection(4)">← Back</button>
+        <button type="button" class="btn-next" onclick="nextSection(4)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- SECTION 5 — Skin history & medical -->
+    <div class="form-section" id="section-5">
+      <div class="section-eyebrow">Step 5 of 7</div>
+      <h2 class="section-title">Skin history<br><em>& medical.</em></h2>
+      <p class="section-desc">A small number of questions to ensure your assessment is accurate and safe.</p>
+
+      <div class="field">
+        <label class="field-label">Do you have any skin conditions diagnosed by a doctor or dermatologist? <span>*</span></label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="skin_conditions" value="No" required onchange="toggleConditional('conditions-detail', false)"><span class="radio-label">No</span></label>
+          <label class="radio-option"><input type="radio" name="skin_conditions" value="Yes" onchange="toggleConditional('conditions-detail', true)"><span class="radio-label">Yes</span></label>
+        </div>
+        <div class="conditional-field" id="conditions-detail">
+          <label class="field-label">Please describe</label>
+          <p class="field-hint">Condition name only — e.g. rosacea, eczema, melasma, psoriasis</p>
+          <textarea name="conditions_detail" placeholder="e.g. Rosacea diagnosed 2021, currently using prescribed gel"></textarea>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Are you currently taking any medication that affects your skin? <span>*</span></label>
+        <p class="field-hint">Roaccutane, oral steroids, chemotherapy, immunosuppressants, hormone therapy.</p>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="medications" value="No" required onchange="toggleConditional('medications-detail', false)"><span class="radio-label">No</span></label>
+          <label class="radio-option"><input type="radio" name="medications" value="Yes" onchange="toggleConditional('medications-detail', true)"><span class="radio-label">Yes</span></label>
+        </div>
+        <div class="conditional-field" id="medications-detail">
+          <label class="field-label">Medication name only</label>
+          <textarea name="medications_detail" placeholder="e.g. Roaccutane, started January 2025"></textarea>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Have you had any aesthetic treatments in the last 12 months? <span class="field-optional">optional</span></label>
+        <p class="field-hint">Botox, filler, chemical peels, microneedling, laser, LED. Include approximate dates.</p>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="treatments" value="No"><span class="radio-label">No</span></label>
+          <label class="radio-option"><input type="radio" name="treatments" value="Yes" onchange="toggleConditional('treatments-detail', true)"><span class="radio-label">Yes</span></label>
+        </div>
+        <div class="conditional-field" id="treatments-detail">
+          <label class="field-label">Please describe</label>
+          <textarea name="treatments_detail" placeholder="e.g. Botox forehead and frown lines — 4 months ago. Chemical peel — 6 months ago."></textarea>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Known allergies <span>*</span></label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="allergies" value="None" required><span class="radio-label">None</span></label>
+          <label class="radio-option"><input type="radio" name="allergies" value="Yes" onchange="toggleConditional('allergies-detail', true)"><span class="radio-label">Yes</span></label>
+        </div>
+        <div class="conditional-field" id="allergies-detail">
+          <label class="field-label">Please list</label>
+          <textarea name="allergies_detail" placeholder="e.g. Nickel, latex, fragrance"></textarea>
+        </div>
+      </div>
+
+      <div class="nav-wrap">
+        <button type="button" class="btn-back" onclick="prevSection(5)">← Back</button>
+        <button type="button" class="btn-next" onclick="nextSection(5)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- SECTION 6 — Photos -->
+    <div class="form-section" id="section-6">
+      <div class="section-eyebrow">Step 6 of 7</div>
+      <h2 class="section-title">Your<br><em>photos.</em></h2>
+      <p class="section-desc">Four photographs for Decoded — the close-up is essential as it lets us assess texture and scarring in detail.</p>
+
+      <div class="photo-guide">
+        <div class="photo-guide-title">Four photos required</div>
+        <div class="photo-guide-grid">
+          <div class="photo-guide-item"><span class="photo-guide-num">01</span><div class="photo-guide-name">Front facing</div></div>
+          <div class="photo-guide-item"><span class="photo-guide-num">02</span><div class="photo-guide-name">Right profile</div></div>
+          <div class="photo-guide-item"><span class="photo-guide-num">03</span><div class="photo-guide-name">Left profile</div></div>
+          <div class="photo-guide-item"><span class="photo-guide-num">04</span><div class="photo-guide-name">Close-up — main concern area</div></div>
+        </div>
+        <ul class="photo-rules">
+          <li>Natural daylight only — no flash, no ring light</li>
+          <li>No makeup, no filter, no editing</li>
+          <li>Hair pulled back so the full face is visible</li>
+          <li>For the close-up — hold the camera 15–20cm from the area of concern</li>
+          <li>Your secure photo upload link will be sent by email after you submit this form</li>
+        </ul>
+      </div>
+
+      <div class="field">
+        <label class="field-label">Is there anything on your face in these photos? <span>*</span></label>
+        <p class="field-hint">Makeup, SPF, moisturiser, oils, Botox or filler all affect what we see. Please be honest.</p>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="face_products" value="No — clean bare skin" required><span class="radio-label">No — bare skin</span></label>
+          <label class="radio-option"><input type="radio" name="face_products" value="Yes" onchange="toggleConditional('products-detail', true)"><span class="radio-label">Yes</span></label>
+        </div>
+        <div class="conditional-field" id="products-detail">
+          <label class="field-label">Please describe</label>
+          <textarea name="products_detail" placeholder="e.g. SPF only, no makeup. Filler in cheeks 3 months ago."></textarea>
+        </div>
+      </div>
+
+      <div class="nav-wrap">
+        <button type="button" class="btn-back" onclick="prevSection(6)">← Back</button>
+        <button type="button" class="btn-next" onclick="nextSection(6)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- SECTION 7 — Consent -->
+    <div class="form-section" id="section-7">
+      <div class="section-eyebrow">Step 7 of 7</div>
+      <h2 class="section-title">Before we<br><em>begin.</em></h2>
+      <p class="section-desc">Please read and confirm the following before we start your Decoded assessment.</p>
+
+      <div class="legal-box">
+        <strong>What Decoded is:</strong> A comprehensive photo-based skin wellness assessment. All observations are photo-observed and based on declared information only.<br><br>
+        <strong>What Decoded is not:</strong> A clinical diagnosis, a medical assessment, a prescription or a treatment plan. The Skin Sage does not diagnose or treat medical skin conditions.<br><br>
+        <strong>Routine and ingredient guidance:</strong> All routine and ingredient guidance is educational and ingredient-led. No specific brands are recommended. The Skin Sage accepts no liability for product choices made independently.<br><br>
+        <strong>Two-week follow-up:</strong> Included in your Decoded. After photos should be submitted via your secure upload link at the two-week mark.<br><br>
+        <strong>Your responsibility:</strong> If you have a diagnosed skin condition or are under medical or dermatological care, please consult your clinician before acting on any guidance in this report. If anything in your report causes you concern or distress, please speak with your GP.
+      </div>
+
+      <div class="field">
+        <label class="consent-item" for="c1">
+          <input type="checkbox" id="c1" name="consent_service" value="confirmed" required>
+          <span class="consent-check"></span>
+          <span class="consent-text">I understand that Decoded is a photo-based educational assessment and not a clinical or medical service.</span>
+        </label>
+        <label class="consent-item" for="c2">
+          <input type="checkbox" id="c2" name="consent_photos" value="confirmed" required>
+          <span class="consent-check"></span>
+          <span class="consent-text">I confirm that the photos I am submitting are of myself, taken in natural light, without makeup or filters, and that all information I have declared is accurate.</span>
+        </label>
+        <label class="consent-item" for="c3">
+          <input type="checkbox" id="c3" name="consent_products" value="confirmed" required>
+          <span class="consent-check"></span>
+          <span class="consent-text">I understand that routine and ingredient guidance is educational and ingredient-led. No specific brands are recommended. I accept responsibility for any products I choose independently.</span>
+        </label>
+        <label class="consent-item" for="c4">
+          <input type="checkbox" id="c4" name="consent_followup" value="confirmed" required>
+          <span class="consent-check"></span>
+          <span class="consent-text">I understand that my two-week follow-up is included and that I will need to submit after photos via my secure upload link at the two-week mark.</span>
+        </label>
+        <label class="consent-item" for="c5">
+          <input type="checkbox" id="c5" name="consent_data" value="confirmed" required>
+          <span class="consent-check"></span>
+          <span class="consent-text">I consent to The Skin Sage processing the information and photos I have provided for the sole purpose of producing my Decoded report and two-week follow-up, in accordance with UK GDPR. My data will not be shared with third parties.</span>
+        </label>
+      </div>
+
+      <div class="nav-wrap">
+        <button type="button" class="btn-back" onclick="prevSection(7)">← Back</button>
+        <button type="submit" class="btn-submit">Submit my form →</button>
+      </div>
+    </div>
+
+  </form>
+
+  <!-- THANK YOU -->
+  <div class="thankyou" id="thankyou">
+    <div class="thankyou-seal">✦</div>
+    <h2 class="thankyou-title">Thank you.<br><em>We have you.</em></h2>
+    <p class="thankyou-body">Your Decoded form has been received. Your report will be with you within 48 hours of receiving your photographs. One thing left to do.</p>
+    <div class="thankyou-next">
+      <div class="thankyou-next-title">Your next step — photos</div>
+      <ul class="thankyou-next-list">
+        <li>You will receive a secure photo upload link by email</li>
+        <li>Four photos required — front, right profile, left profile, close-up</li>
+        <li>Natural light · No makeup · No filter · Hair back</li>
+        <li>Close-up should focus on your main area of concern</li>
+        <li>Your report will be prepared once photos are received</li>
+        <li>Your two-week follow-up link will be included in your report</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const TOTAL = 7;
+
+function updateProgress(step) {
+  const pct = step === 0 ? 0 : Math.round((step / TOTAL) * 100);
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-text').textContent =
+    step === 0 ? 'Introduction' : `Step ${step} of ${TOTAL}`;
+}
+
+function showIntro() {
+  document.querySelectorAll('.form-section').forEach(s => s.classList.remove('active'));
+  document.getElementById('intro-panel').style.display = 'block';
+  updateProgress(0);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showSection(n) {
+  document.getElementById('intro-panel').style.display = 'none';
+  document.querySelectorAll('.form-section').forEach(s => s.classList.remove('active'));
+  document.getElementById(`section-${n}`).classList.add('active');
+  updateProgress(n);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function nextSection(current) {
+  const section = document.getElementById(`section-${current}`);
+  let valid = true;
+  section.querySelectorAll('[required]').forEach(field => {
+    if (field.type === 'radio') {
+      if (!section.querySelector(`[name="${field.name}"]:checked`)) valid = false;
+    } else if (field.type === 'checkbox') {
+      if (!field.checked) valid = false;
+    } else {
+      if (!field.value.trim()) { valid = false; field.style.borderBottomColor = '#8b3a3a'; }
+      else field.style.borderBottomColor = '';
+    }
+  });
+  if (valid) showSection(current + 1);
+  else window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function prevSection(current) {
+  if (current <= 1) showIntro();
+  else showSection(current - 1);
+}
+
+function toggleConditional(id, show) {
+  document.getElementById(id).classList.toggle('visible', show);
+}
+
+document.getElementById('decoded-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  try {
+    const res = await fetch(e.target.action, {
+      method: 'POST',
+      body: new FormData(e.target),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      document.querySelectorAll('.form-section').forEach(s => s.classList.remove('active'));
+      document.getElementById('thankyou').classList.add('active');
+      document.getElementById('progress-fill').style.width = '100%';
+      document.getElementById('progress-text').textContent = 'Complete';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  } catch(err) {
+    alert('Something went wrong. Please email hello@theskinsage.com directly.');
+  }
+});
+
+updateProgress(0);
+</script>
+</body>
+</html>
