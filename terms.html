@@ -3,114 +3,438 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terms and Conditions | The Skin Sage</title>
-<meta name="description" content="Terms and Conditions for The Skin Sage virtual skin consultation service.">
+<title>Terms and Conditions · The Skin Sage</title>
+<meta name="description" content="Terms and Conditions for The Skin Sage — a trading name of Nevaraa Wellness Ltd. Please read these carefully before purchasing any consultation.">
 <link rel="canonical" href="https://www.theskinsage.com/terms.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;1,200;1,300&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;1,200;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#1a1714;--br:#9e7d4e;--brp:#d4b896;--white:#ffffff;--cream:#f5f0e8;--sf:#4a4a42;--fa:#8a8a7e;--border:rgba(158,125,78,0.12);}
+:root{--ink:#1a1714;--br:#9e7d4e;--brp:#d4b896;--brf:#f5efe6;--cream:#faf7f2;--parch:#ede6d8;--forest:#1c2e20;--sf:#4a4a42;--fa:#8a8a7e;--border:rgba(158,125,78,0.15);--warn:#f5efe0;}
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:var(--white);color:var(--ink);font-family:'Jost',sans-serif;font-weight:300;font-size:15px;line-height:1.9;}
-.nav{background:var(--ink);padding:20px 60px;display:flex;align-items:center;justify-content:space-between;}
-.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
-.nav-name{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--brp);}
-.nav-back{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(212,184,150,0.45);text-decoration:none;}
-.nav-back:hover{color:var(--brp);}
-.hero{background:var(--cream);padding:60px;border-bottom:1px solid var(--border);}
-.hero-tag{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--br);display:block;margin-bottom:12px;}
-.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,44px);font-weight:200;color:var(--ink);letter-spacing:-1px;margin-bottom:12px;}
-.hero-meta{font-size:11px;color:var(--fa);}
-.content{max-width:760px;margin:0 auto;padding:60px;}
-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.5vw,26px);font-weight:200;color:var(--ink);margin:40px 0 14px;letter-spacing:-0.3px;}
-p{margin-bottom:16px;color:var(--sf);font-size:14px;line-height:1.9;}
-strong{color:var(--ink);font-weight:500;}
-ul{margin:12px 0 16px 20px;color:var(--sf);font-size:14px;}
-ul li{margin-bottom:8px;line-height:1.7;}
-.highlight{background:var(--cream);border-left:2px solid var(--br);padding:16px 20px;margin:20px 0;font-size:14px;color:var(--sf);}
-.footer-simple{background:var(--ink);padding:32px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
-.footer-copy{font-size:11px;color:rgba(245,240,232,0.2);}
-@media(max-width:768px){.nav,.content,.hero{padding-left:24px;padding-right:24px;}.footer-simple{padding:24px;flex-direction:column;text-align:center;}}
+body{background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300;font-size:15px;line-height:1.85;}
+a{color:var(--br);text-decoration:none;}
+a:hover{text-decoration:underline;}
+nav{background:var(--forest);padding:0 60px;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.nw{font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--brp);}
+.nback{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(212,184,150,0.4);transition:color 0.2s;}
+.nback:hover{color:var(--brp);text-decoration:none;}
+.hero{background:var(--forest);padding:60px 60px 50px;border-bottom:1px solid rgba(212,184,150,0.08);}
+.hero-eyebrow{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:rgba(212,184,150,0.4);margin-bottom:16px;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4vw,52px);font-weight:200;color:#f5f0e8;line-height:1.1;margin-bottom:16px;}
+.hero-meta{font-size:13px;color:rgba(212,184,150,0.35);}
+.main{max-width:820px;margin:0 auto;padding:70px 60px 100px;}
+.toc{background:var(--parch);border-left:3px solid var(--br);padding:32px 36px;margin-bottom:60px;}
+.toc-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;color:var(--ink);margin-bottom:16px;}
+.toc-list{list-style:none;column-count:2;column-gap:32px;}
+.toc-list li{margin-bottom:8px;}
+.toc-list a{font-size:13px;color:var(--br);}
+.section{margin-bottom:56px;padding-bottom:56px;border-bottom:1px solid var(--border);}
+.section:last-child{border-bottom:none;}
+.section-num{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--br);margin-bottom:8px;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:var(--ink);margin-bottom:20px;line-height:1.2;}
+.section p{font-size:14px;color:var(--sf);line-height:1.9;margin-bottom:16px;}
+.section p:last-child{margin-bottom:0;}
+.section h3{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:var(--ink);margin:24px 0 10px;}
+.section ul,.section ol{margin:12px 0 20px 0;padding-left:20px;}
+.section li{font-size:14px;color:var(--sf);line-height:1.9;margin-bottom:6px;}
+.highlight-box{background:var(--brf);border-left:3px solid var(--br);padding:20px 24px;margin:20px 0;font-size:13px;color:var(--sf);line-height:1.9;}
+.highlight-box strong{color:var(--ink);}
+.warning-box{background:var(--warn);border-left:3px solid #c4907a;padding:20px 24px;margin:20px 0;font-size:13px;color:var(--sf);line-height:1.9;}
+.warning-box strong{color:var(--ink);}
+.tier-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:13px;}
+.tier-table th{background:var(--forest);color:var(--brp);padding:12px 16px;text-align:left;font-weight:400;font-size:12px;letter-spacing:1px;}
+.tier-table td{padding:12px 16px;border-bottom:1px solid var(--border);color:var(--sf);vertical-align:top;line-height:1.7;}
+.tier-table tr:nth-child(even) td{background:var(--parch);}
+footer{background:var(--forest);padding:40px 60px;text-align:center;}
+.footer-text{font-size:12px;color:rgba(212,184,150,0.3);line-height:1.9;}
+.footer-text a{color:var(--br);}
+@media(max-width:768px){nav{padding:0 24px;}.hero{padding:40px 24px 36px;}.main{padding:48px 24px 80px;}.toc-list{column-count:1;}footer{padding:32px 24px;}}
 </style>
 </head>
 <body>
 
-<nav class="nav">
-  <a href="skin-sage-final-v2.html" class="nav-logo">
-    <svg width="20" height="25" viewBox="0 0 120 150" fill="none" aria-hidden="true">
-      <circle cx="60" cy="75" r="52" stroke="#d4b896" stroke-width="1" fill="none"/>
-      <line x1="60" y1="23" x2="60" y2="127" stroke="#d4b896" stroke-width="1.2"/>
-      <line x1="32" y1="32" x2="88" y2="32" stroke="#d4b896" stroke-width="1.2"/>
-      <path d="M60 52 C50 52 43 59 43 68 C43 77 50 82 60 82 C70 82 77 87 77 96 C77 105 70 112 60 112" stroke="#d4b896" stroke-width="1.1" fill="none" stroke-linecap="round"/>
-      <circle cx="60" cy="23" r="3.5" fill="#9e7d4e"/>
-    </svg>
-    <span class="nav-name">The Skin Sage</span>
-  </a>
-  <a href="skin-sage-final-v2.html" class="nav-back">← Back to The Skin Sage</a>
+<nav>
+  <span class="nw">The Skin Sage</span>
+  <a href="index.html" class="nback">← Back to website</a>
 </nav>
 
 <div class="hero">
-  <span class="hero-tag">Legal</span>
+  <div class="hero-eyebrow">Legal · Service terms</div>
   <h1 class="hero-title">Terms and Conditions</h1>
-  <p class="hero-meta">Last updated: 2025 · The Skin Sage · theskinsage.com</p>
+  <p class="hero-meta">The Skin Sage — a trading name of Nevaraa Wellness Ltd &nbsp;·&nbsp; Last updated: 1 April 2025 &nbsp;·&nbsp; Version 1.0</p>
 </div>
 
-<div class="content">
+<main class="main">
 
-  <div class="highlight"><strong>Important:</strong> By purchasing and using The Skin Sage consultation service you agree to these terms and conditions. Please read them carefully before purchasing.</div>
+  <div class="warning-box">
+    <strong>Please read these Terms and Conditions carefully before purchasing any consultation or service.</strong> By placing an order or submitting an intake form, you confirm that you have read, understood and agreed to these Terms and Conditions. If you do not agree, please do not proceed with your purchase.
+  </div>
 
-  <h2>About the service</h2>
-  <p>The Skin Sage provides virtual skin consultation services. All consultations are provided for <strong>educational and informational purposes only</strong>. Nothing provided through this service constitutes medical advice, a clinical diagnosis, a prescription or a treatment plan. This service does not replace the advice of a qualified medical professional including your GP or a dermatologist.</p>
+  <nav class="toc" aria-label="Table of contents">
+    <div class="toc-title">Contents</div>
+    <ul class="toc-list">
+      <li><a href="#t1">1. About us</a></li>
+      <li><a href="#t2">2. Our services</a></li>
+      <li><a href="#t3">3. What our services are not</a></li>
+      <li><a href="#t4">4. Eligibility</a></li>
+      <li><a href="#t5">5. The consultation process</a></li>
+      <li><a href="#t6">6. Pricing and payment</a></li>
+      <li><a href="#t7">7. Your 14-day cancellation right</a></li>
+      <li><a href="#t8">8. Refunds and complaints</a></li>
+      <li><a href="#t9">9. Turnaround times</a></li>
+      <li><a href="#t10">10. Your responsibilities</a></li>
+      <li><a href="#t11">11. Photographs</a></li>
+      <li><a href="#t12">12. The Reiki session</a></li>
+      <li><a href="#t13">13. The Inner Sage community</a></li>
+      <li><a href="#t14">14. Upgrade credits</a></li>
+      <li><a href="#t15">15. Intellectual property</a></li>
+      <li><a href="#t16">16. Our liability to you</a></li>
+      <li><a href="#t17">17. Your statutory rights</a></li>
+      <li><a href="#t18">18. Governing law</a></li>
+      <li><a href="#t19">19. Complaints procedure</a></li>
+      <li><a href="#t20">20. Changes to these terms</a></li>
+      <li><a href="#t21">21. Contact us</a></li>
+    </ul>
+  </nav>
 
-  <h2>Eligibility</h2>
-  <p>The Skin Sage consultation service is available to adults. By purchasing a consultation you confirm that you are of legal adult age in your country of residence. If you have a diagnosed medical skin condition or are under the care of a dermatologist, we recommend informing your medical practitioner before making changes to your skincare routine based on our guidance.</p>
+  <!-- 1 -->
+  <div class="section" id="t1">
+    <div class="section-num">Clause 01</div>
+    <h2 class="section-title">About us</h2>
+    <p>The Skin Sage is a trading name of <strong>Nevaraa Wellness Ltd</strong>, a company registered in England and Wales ("we", "us", "our").</p>
+    <p>Contact: hello@theskinsage.com | www.theskinsage.com</p>
+    <p>These Terms and Conditions govern the contract between you ("you", "client", "your") and Nevaraa Wellness Ltd trading as The Skin Sage for the provision of our consultation services.</p>
+  </div>
 
-  <h2>What is included</h2>
-  <p>Each consultation tier includes the specific elements listed on our website at the time of purchase. The Skin Sage reserves the right to update the content of consultation tiers with reasonable notice. Any consultation already purchased will be delivered as described at the time of purchase.</p>
+  <!-- 2 -->
+  <div class="section" id="t2">
+    <div class="section-num">Clause 02</div>
+    <h2 class="section-title">Our services</h2>
+    <p>The Skin Sage provides virtual skin wellness consultation services delivered as locked PDF reports to your email inbox. Our services are <strong>educational and informational</strong> in nature.</p>
+    <p>We offer four consultation tiers:</p>
+    <table class="tier-table">
+      <thead><tr><th>Tier</th><th>Price</th><th>Turnaround</th><th>Key deliverables</th></tr></thead>
+      <tbody>
+        <tr><td><strong>The Score</strong></td><td>£25</td><td>24 hours from receipt of photographs</td><td>Skin wellness score across five photo-observed categories, one sentence per score, overall interpretation, locked PDF</td></tr>
+        <tr><td><strong>Reveal</strong></td><td>£65</td><td>24 hours from receipt of photographs</td><td>Skin wellness score, three photo observations, driving concern analysis, product review, one priority action, locked PDF</td></tr>
+        <tr><td><strong>Decoded</strong></td><td>£145</td><td>48 hours from receipt of photographs</td><td>Full assessment, age assessment, complete photo assessment, internal drivers, full product review, corrected routine, ingredient guidance, lymphatic drainage technique, follow-up photo review, locked PDF</td></tr>
+        <tr><td><strong>Unlocked</strong></td><td>£295</td><td>48 hours from receipt of photographs</td><td>Everything in Decoded, eight week milestone plan, 20-minute check-in call, four-week photo check-in, guided Reiki wellbeing session, locked PDF</td></tr>
+      </tbody>
+    </table>
+    <p>All assessments are photo-observed and based on the information you declare in your intake form. Scores and observations reflect visible surface indicators only.</p>
+    <p>We also offer the following add-on services as part of "The Edit":</p>
+    <ul>
+      <li><strong>The Follow Up</strong> — £35 — two-week photo check-in with written response</li>
+      <li><strong>The Progress Check</strong> — £55 — four-week photo review against original baseline</li>
+      <li><strong>The Reiki Session</strong> — £85 — 30-minute guided Reiki wellbeing session via Whereby</li>
+    </ul>
+  </div>
 
-  <h2>Your report</h2>
-  <p>Your consultation report will be delivered as a locked PDF document to the email address you provide. Reports are delivered within the turnaround time stated for your tier from the point at which we receive your completed intake form and all required photographs. Turnaround times are targets not guarantees. If for any reason we are unable to meet the stated turnaround time we will communicate this to you promptly.</p>
-  <p>Your report is produced specifically for you based on the information and photographs you provide. The accuracy of your report depends in part on the accuracy and completeness of your intake form and the quality of your photographs. We are not responsible for inaccuracies in our assessment that result from inaccurate information provided by you.</p>
+  <!-- 3 -->
+  <div class="section" id="t3">
+    <div class="section-num">Clause 03</div>
+    <h2 class="section-title">What our services are not</h2>
+    <div class="warning-box">
+      <strong>This is the most important section of these Terms. Please read it carefully.</strong>
+    </div>
+    <p>The Skin Sage consultation service is provided for <strong>educational and informational purposes only</strong>. It is expressly not:</p>
+    <ul>
+      <li>A medical service or medical consultation</li>
+      <li>A clinical diagnosis of any kind</li>
+      <li>A prescription or treatment plan</li>
+      <li>A dermatological or GP assessment</li>
+      <li>Advice from a registered medical professional acting in a medical capacity</li>
+      <li>A substitute for professional medical advice, diagnosis or treatment</li>
+    </ul>
+    <p>Nothing provided through our services should be used as a substitute for professional medical advice from a qualified healthcare professional. We strongly recommend that you consult your GP or a qualified dermatologist for any medical concerns about your skin.</p>
+    <p>If anything identified in your photographs or intake information falls outside the scope of aesthetic wellness, you will be advised to seek appropriate professional assessment. This does not constitute a diagnosis.</p>
+    <p>Our ingredient guidance is educational and informational. We do not recommend specific branded products. The Skin Sage accepts no liability for any adverse reactions or outcomes arising from products you independently choose to purchase or use.</p>
+    <p>The Reiki wellbeing session is provided for relaxation and energetic wellbeing support only. It is not a medical treatment and no health claims are made. It is not a substitute for medical or psychological care. See Clause 12 for full details.</p>
+    <p>By purchasing any of our services, you acknowledge and accept these limitations in full.</p>
+  </div>
 
-  <h2>Photographs</h2>
-  <p>By submitting photographs you confirm that you are the subject of the photographs or that you have the right to submit them. You grant The Skin Sage a limited licence to use your photographs solely for the purpose of producing your consultation report. This licence expires when your report has been delivered. Your photographs are not used for any other purpose. See our Privacy Policy for full details.</p>
+  <!-- 4 -->
+  <div class="section" id="t4">
+    <div class="section-num">Clause 04</div>
+    <h2 class="section-title">Eligibility</h2>
+    <p>To purchase our services you must:</p>
+    <ul>
+      <li>Be aged 18 or over, or have the written consent of a parent or legal guardian if under 18</li>
+      <li>Be resident in the United Kingdom or another jurisdiction where our services are lawfully available</li>
+      <li>Have the legal capacity to enter into a binding contract</li>
+    </ul>
+    <p>If you are purchasing on behalf of a person under 18, you as the parent or legal guardian will be the contracting party and you accept full responsibility for ensuring the service is appropriate for the individual concerned.</p>
+    <p>We reserve the right to decline to provide our services to any person at our reasonable discretion, including where we reasonably consider that the service would not be appropriate for that individual's circumstances.</p>
+  </div>
 
-  <h2>Payment</h2>
-  <p>Payment is required in full before your consultation is processed. All prices are displayed in pounds sterling and include VAT where applicable. Payment is processed securely through our third party payment provider.</p>
+  <!-- 5 -->
+  <div class="section" id="t5">
+    <div class="section-num">Clause 05</div>
+    <h2 class="section-title">The consultation process</h2>
+    <h3>How the contract is formed</h3>
+    <p>A contract between you and us is formed when: (1) you complete your intake form and submit payment, and (2) we confirm receipt of your intake form. Your report will be prepared once we have received your photographs via the secure upload link sent to you by email.</p>
+    <h3>The intake form</h3>
+    <p>You are required to complete a tier-specific intake form before your consultation can be produced. The intake form captures the declared information necessary for us to conduct your photo-observed assessment accurately and safely.</p>
+    <h3>Photographs</h3>
+    <p>Following submission of your intake form and payment, you will receive a secure photo upload link by email. You must submit the required photographs within <strong>30 days</strong> of receiving the upload link. If photographs are not received within 30 days, we reserve the right to treat your order as cancelled and retain the fee, unless you have contacted us to arrange a reasonable extension.</p>
+    <h3>Report delivery</h3>
+    <p>Your report will be delivered to the email address you provided within the turnaround time stated for your chosen tier, measured from the time we receive your complete set of photographs. See Clause 9 for full turnaround time details.</p>
+  </div>
 
-  <h2>Refunds and cancellations</h2>
-  <p>Due to the personalised nature of our consultation service, we are unable to offer refunds once your intake form has been submitted and your consultation has been commenced.</p>
-  <p>If you wish to cancel before submitting your intake form please contact us at hello@theskinsage.com within 14 days of purchase and we will provide a full refund in accordance with your statutory rights under the Consumer Contracts Regulations 2013.</p>
-  <p>If you are not satisfied with your consultation report please contact us at hello@theskinsage.com within 7 days of delivery. We will review your concern and work to resolve it. We are committed to the quality of our service and will address any legitimate concern with care.</p>
+  <!-- 6 -->
+  <div class="section" id="t6">
+    <div class="section-num">Clause 06</div>
+    <h2 class="section-title">Pricing and payment</h2>
+    <p>All prices are stated in pounds sterling (£) and are inclusive of any applicable VAT. The price you pay is the price displayed at the time of purchase. We do not engage in drip pricing — the price you see is the total price you pay, with no hidden fees or additional charges.</p>
+    <p>Payment is required in full at the time of purchase. We accept payment via the methods available through our booking platform at the time of purchase.</p>
+    <p>We reserve the right to change our prices at any time. Any price change will not affect orders already placed and confirmed.</p>
+    <p>All transactions are processed securely by our payment processor. We do not store or have access to your payment card details.</p>
+  </div>
 
-  <h2>Limitation of liability</h2>
-  <p>The Skin Sage provides educational and informational guidance only. We accept no liability for any outcome arising from the application of guidance provided in your consultation report. You apply any guidance at your own discretion.</p>
-  <p>If you experience an adverse reaction to any product or ingredient following your consultation, discontinue use immediately and seek appropriate medical advice.</p>
-  <p>Our total liability to you in connection with our service shall not exceed the amount you paid for your consultation.</p>
+  <!-- 7 -->
+  <div class="section" id="t7">
+    <div class="section-num">Clause 07</div>
+    <h2 class="section-title">Your 14-day cancellation right</h2>
+    <div class="highlight-box">
+      <strong>Your statutory right to cancel:</strong> Under the Consumer Contracts (Information, Cancellation and Additional Charges) Regulations 2013, you have the right to cancel your order within 14 days of purchase without giving any reason.
+    </div>
+    <p>The 14-day cancellation period begins on the day you purchase your consultation.</p>
+    <h3>If you request that we begin work within the 14-day cancellation period</h3>
+    <p>If you submit your photographs and ask us to begin producing your report within the 14-day cancellation period, you expressly acknowledge that you are requesting that we begin performing the service before the cancellation period has expired. In this case:</p>
+    <ul>
+      <li>If you cancel <strong>before</strong> your report has been delivered, you will receive a proportionate refund reflecting the work completed at the time of cancellation</li>
+      <li>If you cancel <strong>after</strong> your report has been delivered, you will not be entitled to a refund as the service has been fully performed with your prior express request</li>
+    </ul>
+    <h3>If you do not request early start</h3>
+    <p>If you have not submitted your photographs and have not asked us to begin work, you are entitled to a full refund if you cancel within 14 days of purchase.</p>
+    <h3>How to cancel</h3>
+    <p>To exercise your right to cancel, contact us at hello@theskinsage.com within 14 days of purchase clearly stating your intention to cancel and your order details. We will confirm receipt of your cancellation by email.</p>
+    <p>Refunds will be processed within 14 days of your cancellation being confirmed, using the same payment method you used to purchase.</p>
+  </div>
 
-  <h2>Medical concerns</h2>
-  <p>If at any point during the preparation or delivery of your consultation we identify anything in your photographs or intake information that we believe warrants medical assessment, we will advise you to consult your GP or a dermatologist. We reserve the right to decline to provide certain guidance where we believe it falls outside the scope of educational skin coaching.</p>
+  <!-- 8 -->
+  <div class="section" id="t8">
+    <div class="section-num">Clause 08</div>
+    <h2 class="section-title">Refunds and complaints</h2>
+    <h3>Refunds outside the 14-day period</h3>
+    <p>Outside of your statutory 14-day cancellation right, we will consider refund requests on a case-by-case basis where:</p>
+    <ul>
+      <li>We have materially failed to deliver the services you purchased</li>
+      <li>Your report was significantly deficient in a way that we were unable to rectify</li>
+      <li>There were exceptional circumstances outside your control that prevented you from using the service</li>
+    </ul>
+    <p>We will not issue refunds where: you are dissatisfied with the content of your report but it has been prepared in accordance with these Terms; you provided inaccurate information in your intake form; or you submitted photographs that did not meet the stated requirements and the report was prepared in good faith based on what was submitted.</p>
+    <h3>Complaints</h3>
+    <p>If you are unhappy with any aspect of our service, please contact us in the first instance at hello@theskinsage.com. We will acknowledge your complaint within 5 working days and aim to resolve it within 28 days. If we cannot resolve your complaint to your satisfaction, you may refer the matter to an alternative dispute resolution (ADR) provider or pursue your statutory rights through the courts.</p>
+    <p>Your statutory rights under the Consumer Rights Act 2015 are not affected by these terms.</p>
+  </div>
 
-  <h2>Intellectual property</h2>
-  <p>All content on this website and in your consultation report — including methodology, frameworks, copy, design, the Skin Sage Wellness Score framework and all associated materials — is the intellectual property of The Skin Sage and is protected by copyright. © 2025 The Skin Sage. All rights reserved.</p>
-  <p>Your consultation report is produced for your personal use only. It may not be reproduced, shared commercially, published or used in any way that misrepresents its origin or purpose without our written permission.</p>
+  <!-- 9 -->
+  <div class="section" id="t9">
+    <div class="section-num">Clause 09</div>
+    <h2 class="section-title">Turnaround times</h2>
+    <p>Our turnaround times are measured from the time we receive your complete and satisfactory set of photographs:</p>
+    <ul>
+      <li><strong>The Score:</strong> 24 hours</li>
+      <li><strong>Reveal:</strong> 24 hours</li>
+      <li><strong>Decoded:</strong> 48 hours</li>
+      <li><strong>Unlocked:</strong> 48 hours</li>
+    </ul>
+    <p>Turnaround times are our target times and are not guaranteed. Factors outside our control — including illness, technical issues or exceptional volume — may occasionally affect delivery times. If your report will be significantly delayed beyond the stated turnaround time, we will notify you by email.</p>
+    <p>Turnaround times apply on working days (Monday to Friday, excluding UK public holidays). Photographs received after 5pm will be treated as received the following working day.</p>
+    <p>For the Unlocked tier, the three included sessions (20-minute check-in call, four-week photo check-in, and Reiki wellbeing session) are scheduled by mutual agreement within the timeframes stated on our website. These timeframes are targets and will always be subject to mutual availability.</p>
+  </div>
 
-  <h2>The Reiki session</h2>
-  <p>The Reiki session offered as part of the Unlocked consultation and as a standalone add-on is provided for relaxation and wellbeing support only. It is not a medical treatment. No therapeutic or health claims are made. The Reiki session is a separate wellbeing offering and does not form part of the skin consultation assessment.</p>
+  <!-- 10 -->
+  <div class="section" id="t10">
+    <div class="section-num">Clause 10</div>
+    <h2 class="section-title">Your responsibilities</h2>
+    <p>To enable us to produce an accurate and useful consultation, you agree to:</p>
+    <ul>
+      <li>Provide accurate and truthful information in your intake form, including honest disclosure of all relevant health information, diagnosed conditions, medications and skincare products</li>
+      <li>Submit photographs that meet our stated requirements — natural daylight, no makeup, no filter, no editing, hair pulled back, correct angles</li>
+      <li>Not submit photographs of any person other than yourself</li>
+      <li>Disclose anything on your face in photographs — makeup, SPF, oils, Botox, filler — as this affects assessment accuracy</li>
+      <li>Consult your GP or dermatologist before making any changes to your skincare routine if you have a diagnosed skin condition or are under medical care</li>
+      <li>Seek immediate medical attention if you experience any adverse reaction to any product or practice</li>
+      <li>Not share your consultation report with third parties for commercial purposes without our prior written consent</li>
+    </ul>
+    <p>We accept no liability for inaccurate, misleading or incomplete reports that result from inaccurate or incomplete information provided by you.</p>
+  </div>
 
-  <h2>Governing law</h2>
-  <p>These terms and conditions are governed by and construed in accordance with the laws of England and Wales. Any disputes arising in connection with these terms shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+  <!-- 11 -->
+  <div class="section" id="t11">
+    <div class="section-num">Clause 11</div>
+    <h2 class="section-title">Photographs</h2>
+    <p>By submitting photographs to us, you confirm that:</p>
+    <ul>
+      <li>The photographs are of you and only you</li>
+      <li>You have the legal right to submit them for the purpose of our services</li>
+      <li>You consent to us processing them for the purpose of producing your consultation report</li>
+      <li>They have not been filtered, edited or otherwise altered in a way that would materially affect their accuracy for assessment purposes</li>
+    </ul>
+    <p>Your photographs will be stored securely and used only for the purpose of producing and supporting your consultation. They will not be shared with any third party except as stated in our Privacy Policy. They will not be used in any marketing, promotional or educational material without your separate explicit written consent.</p>
+    <p>We will retain your photographs for the period stated in our Privacy Policy, after which they will be securely deleted.</p>
+    <p>We reserve the right to decline to accept photographs that we reasonably consider do not meet our stated requirements, and to request replacement photographs before proceeding.</p>
+  </div>
 
-  <h2>Contact</h2>
-  <p>If you have any questions about these terms please contact us at hello@theskinsage.com.</p>
+  <!-- 12 -->
+  <div class="section" id="t12">
+    <div class="section-num">Clause 12</div>
+    <h2 class="section-title">The Reiki wellbeing session</h2>
+    <div class="warning-box">
+      <strong>Important notice about the Reiki session — please read carefully.</strong>
+    </div>
+    <p>The Reiki wellbeing session is provided as a guided relaxation experience for nervous system support and energetic balance. It is conducted virtually via Whereby.</p>
+    <p>You expressly acknowledge and agree that:</p>
+    <ul>
+      <li>The Reiki session is provided for relaxation and energetic wellbeing support purposes only</li>
+      <li>It is <strong>not a medical treatment</strong> of any kind</li>
+      <li>No health claims are made, implied or warranted in relation to the Reiki session</li>
+      <li>It is not a treatment for any physical or mental health condition</li>
+      <li>It is not a substitute for medical or psychological care</li>
+      <li>It is not regulated by the Care Quality Commission (CQC) or any other regulatory body</li>
+      <li>Results, experiences and benefits vary between individuals and no specific outcome is promised or guaranteed</li>
+    </ul>
+    <p>If you are currently receiving treatment for any physical or mental health condition, please consult your clinician before participating in a Reiki session.</p>
+    <p>The Reiki session included in the Unlocked package must be booked by mutual agreement within 30 days of receiving your report. Sessions are subject to practitioner availability. If we are unable to schedule your session within 30 days due to circumstances on our side, we will extend this timeframe and notify you accordingly.</p>
+    <p>The standalone Reiki session (The Reiki Session, £85) is subject to the same conditions as above.</p>
+    <p>We do not guarantee that a Reiki session can proceed where technical issues prevent a stable video connection. In such circumstances we will reschedule at no additional charge.</p>
+  </div>
 
-  <p style="margin-top:40px;font-size:12px;color:var(--fa);">© 2025 The Skin Sage · All rights reserved · Founded 2025</p>
+  <!-- 13 -->
+  <div class="section" id="t13">
+    <div class="section-num">Clause 13</div>
+    <h2 class="section-title">The Inner Sage community</h2>
+    <p>The Inner Sage is our community newsletter and content platform. Membership is voluntary and based on your explicit consent.</p>
+    <p>By joining The Inner Sage, you agree to receive communications from us relating to skin education, ingredient guidance, seasonal skin knowledge, early access to content and offers, and information about our services.</p>
+    <p>You can unsubscribe from The Inner Sage at any time by clicking the unsubscribe link in any email or by contacting us at hello@theskinsage.com. Unsubscribing will not affect any consultation you have purchased.</p>
+    <p>The content of The Inner Sage is provided for educational and informational purposes only. It does not constitute medical advice.</p>
+    <p>We reserve the right to change, suspend or discontinue The Inner Sage at any time. We will notify members before any material change.</p>
+    <p>If and when a paid tier of The Inner Sage is introduced, separate terms will apply to that subscription and will be clearly communicated before any payment is taken.</p>
+  </div>
 
-</div>
+  <!-- 14 -->
+  <div class="section" id="t14">
+    <div class="section-num">Clause 14</div>
+    <h2 class="section-title">Upgrade credits</h2>
+    <p>We operate an upgrade credit model. If you have previously purchased a lower tier and wish to upgrade to a higher tier, you will pay only the difference between your original purchase price and the price of the higher tier, provided:</p>
+    <ul>
+      <li>Your original consultation was purchased within the preceding 12 months</li>
+      <li>You contact us directly to arrange the upgrade before purchasing the higher tier independently</li>
+    </ul>
+    <p>Upgrade credits are:</p>
+    <ul>
+      <li>The Score (£25) to Reveal (£65) — pay £40 more</li>
+      <li>The Score (£25) to Decoded (£145) — pay £120 more</li>
+      <li>The Score (£25) to Unlocked (£295) — pay £270 more</li>
+      <li>Reveal (£65) to Decoded (£145) — pay £80 more</li>
+      <li>Reveal (£65) to Unlocked (£295) — pay £230 more</li>
+      <li>Decoded (£145) to Unlocked (£295) — pay £150 more</li>
+    </ul>
+    <p>Upgrade credits are non-transferable and apply to the original purchaser only. They cannot be applied retrospectively to purchases made without contacting us first.</p>
+  </div>
 
-<footer class="footer-simple">
-  <span class="footer-copy">© 2025 The Skin Sage · All rights reserved · Founded 2025</span>
-  <a href="skin-sage-final-v2.html" style="font-size:11px;color:rgba(245,240,232,0.3);text-decoration:none;">← Back to theskinsage.com</a>
+  <!-- 15 -->
+  <div class="section" id="t15">
+    <div class="section-num">Clause 15</div>
+    <h2 class="section-title">Intellectual property</h2>
+    <p>All content produced by The Skin Sage, including consultation reports, the five-category wellness framework, tier names, report templates, website content, The Inner Sage content, and all associated intellectual property, is owned by Nevaraa Wellness Ltd and is protected by copyright.</p>
+    <p>Your consultation report is produced for your personal use only. You may not:</p>
+    <ul>
+      <li>Reproduce, distribute, sell or commercially exploit your report or any part of it</li>
+      <li>Share your report publicly on social media or any platform without our prior written consent</li>
+      <li>Use the content of your report to create derivative works or competing services</li>
+      <li>Remove or alter any copyright notices or branding from your report</li>
+    </ul>
+    <p>You may share your report privately with healthcare professionals for the purpose of your own care. You may reference your report in private communications about your own skin health.</p>
+    <p>The Skin Sage name, The Inner Sage name, Nevaraa Wellness name and all associated logos and brand elements are the intellectual property of Nevaraa Wellness Ltd. Unauthorised use is prohibited.</p>
+  </div>
+
+  <!-- 16 -->
+  <div class="section" id="t16">
+    <div class="section-num">Clause 16</div>
+    <h2 class="section-title">Our liability to you</h2>
+    <div class="highlight-box">
+      <strong>Nothing in these Terms limits our liability for death or personal injury caused by our negligence, for fraud or fraudulent misrepresentation, or for any other liability that cannot be excluded or limited under applicable law, including the Consumer Rights Act 2015.</strong>
+    </div>
+    <p>Subject to the above, and to the fullest extent permitted by law:</p>
+    <ul>
+      <li>Our total liability to you in connection with any single consultation shall not exceed the price you paid for that consultation</li>
+      <li>We are not liable for any indirect, consequential, special or incidental loss or damage arising from your use of our services</li>
+      <li>We are not liable for any loss or damage arising from your reliance on our educational guidance to the exclusion of professional medical advice</li>
+      <li>We are not liable for any adverse reaction to any product or ingredient you independently choose to use following our educational guidance</li>
+      <li>We are not liable for any loss arising from inaccurate or incomplete information you provided in your intake form</li>
+      <li>We are not liable for any loss arising from photographs that did not accurately represent your skin at the time of assessment</li>
+      <li>We are not liable for any loss caused by circumstances beyond our reasonable control including technical failures, illness or force majeure</li>
+    </ul>
+    <p>Our services are educational and informational. The guidance in your report does not replace professional medical advice and we accept no liability for outcomes arising from treating our guidance as medical advice.</p>
+  </div>
+
+  <!-- 17 -->
+  <div class="section" id="t17">
+    <div class="section-num">Clause 17</div>
+    <h2 class="section-title">Your statutory rights</h2>
+    <p>Nothing in these Terms affects your statutory rights as a consumer under UK law, including your rights under:</p>
+    <ul>
+      <li>The Consumer Rights Act 2015 — services must be performed with reasonable care and skill, within a reasonable time and at a reasonable price</li>
+      <li>The Consumer Contracts (Information, Cancellation and Additional Charges) Regulations 2013 — including your 14-day cancellation right</li>
+      <li>The Digital Markets, Competition and Consumers Act 2024 — protection from unfair commercial practices</li>
+      <li>UK GDPR and the Data Protection Act 2018 — your data protection rights</li>
+    </ul>
+    <p>For advice about your consumer rights, contact Citizens Advice at citizensadvice.org.uk or call 0808 223 1133.</p>
+  </div>
+
+  <!-- 18 -->
+  <div class="section" id="t18">
+    <div class="section-num">Clause 18</div>
+    <h2 class="section-title">Governing law and jurisdiction</h2>
+    <p>These Terms and Conditions are governed by the laws of England and Wales. Any dispute arising from or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+    <p>If you are a consumer resident in Scotland or Northern Ireland, you may also bring proceedings in the courts of Scotland or Northern Ireland respectively.</p>
+    <p>Nothing in this clause affects your statutory rights as a consumer.</p>
+  </div>
+
+  <!-- 19 -->
+  <div class="section" id="t19">
+    <div class="section-num">Clause 19</div>
+    <h2 class="section-title">Complaints procedure</h2>
+    <p>We take complaints seriously and aim to resolve them promptly and fairly.</p>
+    <h3>Step 1 — Contact us directly</h3>
+    <p>Email hello@theskinsage.com with the subject line "Complaint — [your name]". Please include your order details, a clear description of your complaint and what resolution you are seeking. We will acknowledge your complaint within 5 working days.</p>
+    <h3>Step 2 — Escalation</h3>
+    <p>If we have not resolved your complaint to your satisfaction within 28 days of receiving it, you may escalate to an alternative dispute resolution (ADR) provider.</p>
+    <h3>Step 3 — Your legal rights</h3>
+    <p>At any stage, you retain the right to pursue your complaint through the courts. You can also contact your local Trading Standards office or Citizens Advice for guidance on your consumer rights.</p>
+    <p>For data protection complaints specifically, you may contact the ICO at ico.org.uk.</p>
+  </div>
+
+  <!-- 20 -->
+  <div class="section" id="t20">
+    <div class="section-num">Clause 20</div>
+    <h2 class="section-title">Changes to these Terms</h2>
+    <p>We may update these Terms and Conditions from time to time to reflect changes in our services, applicable law, or our business practices.</p>
+    <p>We will notify you of any material changes by email before they take effect. The date at the top of this document indicates the version currently in force.</p>
+    <p>For orders already placed, the terms in force at the time of your purchase apply. Updated terms apply to new purchases made after the effective date of the change.</p>
+    <p>Previous versions of these Terms are available on request.</p>
+  </div>
+
+  <!-- 21 -->
+  <div class="section" id="t21">
+    <div class="section-num">Clause 21</div>
+    <h2 class="section-title">Contact us</h2>
+    <div class="highlight-box">
+      <strong>Nevaraa Wellness Ltd trading as The Skin Sage</strong><br>
+      Email: <a href="mailto:hello@theskinsage.com">hello@theskinsage.com</a><br>
+      Website: www.theskinsage.com<br><br>
+      We aim to respond to all enquiries within 2 working days.
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <p class="footer-text">© 2025 The Skin Sage — a trading name of Nevaraa Wellness Ltd · Registered in England and Wales · All rights reserved<br>
+  <a href="index.html">Back to website</a> · <a href="privacy-policy.html">Privacy Policy</a> · hello@theskinsage.com</p>
 </footer>
 
 </body>
