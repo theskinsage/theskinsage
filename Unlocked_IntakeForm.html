@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Skin Sage · Decoded · Intake Form</title>
+<title>The Skin Sage · Unlocked · Intake Form</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&family=Didact+Gothic&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -20,10 +20,13 @@
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { background: var(--cream); color: var(--ink); font-family: 'Didact Gothic', sans-serif; font-size: 14px; line-height: 1.9; }
+
 .site-header { background: var(--forest); padding: 18px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(158,125,78,0.25); }
 .header-brand { font-family: 'Cormorant Garamond', serif; font-size: 11px; letter-spacing: 7px; text-transform: uppercase; color: var(--bronze-pale); }
 .header-tier { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: rgba(212,184,150,0.5); }
+
 .main { max-width: 680px; margin: 0 auto; padding: 60px 40px 100px; }
+
 .intro { text-align: center; margin-bottom: 50px; }
 .intro-eyebrow { font-size: 9px; letter-spacing: 5px; text-transform: uppercase; color: var(--bronze); margin-bottom: 16px; }
 .intro-title { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 200; color: var(--forest); line-height: 1.2; margin-bottom: 12px; }
@@ -32,52 +35,81 @@ body { background: var(--cream); color: var(--ink); font-family: 'Didact Gothic'
 .intro-price { display: inline-block; background: var(--forest); color: var(--bronze-pale); font-family: 'Cormorant Garamond', serif; font-size: 13px; letter-spacing: 3px; padding: 8px 24px; margin-bottom: 24px; }
 .what-box { background: var(--bronze-faint); border-left: 3px solid var(--bronze); padding: 18px 22px; text-align: left; margin-bottom: 24px; }
 .what-title { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--bronze); margin-bottom: 8px; }
-.what-list { list-style: none; font-size: 13px; color: var(--ink-mid); line-height: 2; }
+.what-list { list-style: none; font-size: 13px; color: var(--ink-mid); line-height: 2.1; }
 .what-list li::before { content: '—  '; color: var(--bronze); }
 .intro-disclaimer { font-size: 11px; color: var(--ink-faint); line-height: 1.8; }
+
 .divider { border: none; border-top: 1px solid var(--parchment); margin: 40px 0; }
+
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: var(--bronze); margin-bottom: 24px; padding-bottom: 8px; border-bottom: 1px solid var(--parchment); }
+
 .field { margin-bottom: 28px; }
 .field-label { display: block; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--ink-mid); margin-bottom: 8px; }
 .field-label span { color: var(--bronze); }
 .field-optional { font-size: 9px; letter-spacing: 2px; color: var(--ink-faint); margin-left: 6px; }
 .field-hint { font-size: 12px; color: var(--ink-faint); margin-bottom: 8px; font-style: italic; line-height: 1.7; }
-input[type="text"], input[type="email"], textarea, select { width: 100%; background: white; border: 1px solid rgba(158,125,78,0.25); border-bottom: 2px solid var(--bronze); padding: 13px 15px; font-family: 'Didact Gothic', sans-serif; font-size: 14px; color: var(--ink); outline: none; transition: border-color 0.2s; appearance: none; }
+
+input[type="text"], input[type="email"], textarea, select {
+  width: 100%; background: white; border: 1px solid rgba(158,125,78,0.25);
+  border-bottom: 2px solid var(--bronze); padding: 13px 15px;
+  font-family: 'Didact Gothic', sans-serif; font-size: 14px; color: var(--ink);
+  outline: none; transition: border-color 0.2s; appearance: none;
+}
 input:focus, textarea:focus, select:focus { border-bottom-color: var(--forest); background: var(--bronze-faint); }
 textarea { min-height: 100px; resize: vertical; }
-.radio-group { display: flex; gap: 12px; flex-wrap: wrap; }
-.radio-option { flex: 1; min-width: 80px; }
+
+.radio-group { display: flex; gap: 10px; flex-wrap: wrap; }
+.radio-option { flex: 1; min-width: 90px; }
 .radio-option input { display: none; }
-.radio-label { display: block; padding: 10px 12px; border: 1px solid rgba(158,125,78,0.25); border-bottom: 2px solid var(--bronze); background: white; text-align: center; font-size: 11px; color: var(--ink-mid); cursor: pointer; letter-spacing: 1px; transition: all 0.2s; }
+.radio-label { display: block; padding: 11px 14px; border: 1px solid rgba(158,125,78,0.25); border-bottom: 2px solid var(--bronze); background: white; text-align: center; font-size: 12px; color: var(--ink-mid); cursor: pointer; letter-spacing: 1px; transition: all 0.2s; }
 .radio-option input:checked + .radio-label { background: var(--forest); color: var(--bronze-pale); border-color: var(--forest); }
+
+.product-block { background: white; border: 1px solid rgba(158,125,78,0.15); border-left: 3px solid var(--bronze); padding: 20px; margin-bottom: 16px; }
+.product-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--bronze); margin-bottom: 14px; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media(max-width:500px){ .two-col { grid-template-columns: 1fr; } }
+
+.info-box { background: var(--bronze-faint); border-left: 3px solid var(--bronze); padding: 14px 18px; margin-bottom: 20px; font-size: 12px; color: var(--ink-soft); line-height: 1.8; }
+
+.sessions-box { background: var(--forest); padding: 24px 28px; margin-bottom: 28px; }
+.sessions-title { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: var(--bronze-pale); margin-bottom: 14px; }
+.session-item { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid rgba(212,184,150,0.15); font-size: 13px; color: rgba(212,184,150,0.85); line-height: 1.7; }
+.session-item:last-child { border-bottom: none; }
+.session-num { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--bronze); flex-shrink: 0; line-height: 1.4; }
+
+.legal-box { background: white; border-left: 3px solid var(--bronze); padding: 20px; margin-bottom: 28px; font-size: 12px; color: var(--ink-soft); line-height: 1.9; }
+.legal-box strong { color: var(--ink-mid); }
+
 .consent-block { margin-bottom: 28px; }
 .consent-row { display: flex; gap: 12px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid var(--parchment); }
 .consent-row:last-child { border-bottom: none; }
 .consent-row input[type="checkbox"] { margin-top: 3px; width: 16px; height: 16px; flex-shrink: 0; accent-color: var(--forest); cursor: pointer; }
 .consent-text { font-size: 13px; color: var(--ink-mid); line-height: 1.8; }
-.legal-box { background: white; border-left: 3px solid var(--bronze); padding: 20px; margin-bottom: 28px; font-size: 12px; color: var(--ink-soft); line-height: 1.9; }
-.legal-box strong { color: var(--ink-mid); }
-.section-title { font-family: 'Cormorant Garamond', serif; font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: var(--bronze); margin-bottom: 24px; padding-bottom: 8px; border-bottom: 1px solid var(--parchment); }
-.info-box { background: var(--bronze-faint); border-left: 3px solid var(--bronze); padding: 14px 18px; margin-bottom: 20px; font-size: 12px; color: var(--ink-soft); line-height: 1.8; }
-.product-block { background: white; border: 1px solid rgba(158,125,78,0.15); border-left: 3px solid var(--bronze); padding: 20px; margin-bottom: 16px; }
-.product-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--bronze); margin-bottom: 14px; }
-.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-@media(max-width:500px){ .two-col { grid-template-columns: 1fr; } }
+
 .submit-btn { background: var(--forest); color: var(--bronze-pale); border: none; padding: 18px 48px; font-family: 'Didact Gothic', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; cursor: pointer; width: 100%; transition: background 0.2s; }
 .submit-btn:hover { background: #243828; }
-@media(max-width:600px){ .main { padding: 40px 20px 80px; } .site-header { padding: 16px 20px; } .intro-title { font-size: 32px; } }
+
+@media(max-width:600px){
+  .main { padding: 40px 20px 80px; }
+  .site-header { padding: 16px 20px; }
+  .intro-title { font-size: 32px; }
+}
 </style>
 </head>
 <body>
+
 <header class="site-header">
   <div class="header-brand">The Skin Sage</div>
-  <div class="header-tier">Decoded &nbsp;·&nbsp; £145</div>
+  <div class="header-tier">Unlocked &nbsp;·&nbsp; £295</div>
 </header>
+
 <div class="main">
+
   <div class="intro">
-    <div class="intro-eyebrow">The Skin Sage · Decoded</div>
-    <h1 class="intro-title">The full<br><em>picture.</em></h1>
-    <p class="intro-body">Every product reviewed. Every internal driver identified. A corrected routine built around your skin. This form takes around 10 minutes — and gives us everything we need.</p>
-    <div class="intro-price">Decoded &nbsp;·&nbsp; £145</div>
+    <div class="intro-eyebrow">The Skin Sage · Unlocked</div>
+    <h1 class="intro-title">The complete<br><em>experience.</em></h1>
+    <p class="intro-body">Everything. Your full skin assessment, complete routine review, corrected protocol, ingredient coaching, lymphatic technique, eight week plan, and three included sessions.</p>
+    <div class="intro-price">Unlocked &nbsp;·&nbsp; £295</div>
     <div class="what-box">
       <div class="what-title">What you will receive</div>
       <ul class="what-list">
@@ -90,7 +122,10 @@ textarea { min-height: 100px; resize: vertical; }
         <li>Corrected morning and evening routine</li>
         <li>Ingredient guidance — what to look for and why</li>
         <li>Clinically correct lymphatic self massage technique</li>
-        <li>Two week follow-up — after photos reviewed</li>
+        <li>Eight week skin milestone plan</li>
+        <li>20-minute check-in call — within 14 days of report</li>
+        <li>4-week photo check-in — written response within 48 hours</li>
+        <li>Guided Reiki wellbeing session — 30 mins via Whereby</li>
         <li>Delivered as a locked PDF within 48 hours</li>
       </ul>
     </div>
@@ -99,15 +134,16 @@ textarea { min-height: 100px; resize: vertical; }
 
   <hr class="divider">
 
-  <form action="https://formspree.io/f/maqlovkj" method="POST">
-    <input type="hidden" name="_subject" value="New Decoded Submission — The Skin Sage">
+  <form action="https://formspree.io/f/xbdpydpk" method="POST">
+    <input type="hidden" name="_subject" value="New Unlocked Submission — The Skin Sage">
     <input type="hidden" name="_next" value="https://theskinsage.github.io/theskinsage/thankyou.html">
 
-    <!-- About you -->
+    <!-- ABOUT YOU -->
     <div class="section-title">About You</div>
+
     <div class="field">
       <label class="field-label" for="preferred_name">Preferred name <span>*</span></label>
-      <p class="field-hint">The name that will appear on your Decoded report.</p>
+      <p class="field-hint">The name that will appear throughout your Unlocked report.</p>
       <input type="text" id="preferred_name" name="preferred_name" required placeholder="e.g. Gabriella, Gabi, Alex">
     </div>
     <div class="field">
@@ -116,26 +152,31 @@ textarea { min-height: 100px; resize: vertical; }
     </div>
     <div class="field">
       <label class="field-label" for="email">Email address <span>*</span></label>
-      <p class="field-hint">Your Decoded report will be sent here within 48 hours of receiving your photos.</p>
+      <p class="field-hint">Your Unlocked report will be sent here within 48 hours of receiving your photos.</p>
       <input type="email" id="email" name="email" required placeholder="your@email.com">
     </div>
     <div class="field">
       <label class="field-label" for="age_range">Age range <span>*</span></label>
       <select id="age_range" name="age_range" required>
         <option value="" disabled selected>Select your age range</option>
-        <option>Under 18</option><option>18–25</option><option>26–35</option>
-        <option>36–45</option><option>46–55</option><option>56+</option>
+        <option>Under 18</option>
+        <option>18–25</option>
+        <option>26–35</option>
+        <option>36–45</option>
+        <option>46–55</option>
+        <option>56+</option>
       </select>
     </div>
 
     <hr class="divider">
 
-    <!-- Skin concerns -->
+    <!-- SKIN CONCERNS -->
     <div class="section-title">Your Skin Concerns</div>
+
     <div class="field">
       <label class="field-label" for="main_concern">What are your main skin concerns? <span>*</span></label>
-      <p class="field-hint">List everything — pigmentation, breakouts, texture, dullness, scarring, dryness, oiliness, sensitivity.</p>
-      <textarea id="main_concern" name="main_concern" required placeholder="e.g. Dark marks from old spots, rough texture on cheeks, occasional breakouts on jawline, skin looks dull"></textarea>
+      <p class="field-hint">List everything — pigmentation, breakouts, texture, dullness, scarring, dryness, oiliness, sensitivity. The more detail you give, the more accurate your assessment will be.</p>
+      <textarea id="main_concern" name="main_concern" required placeholder="e.g. Dark marks from old spots that won't fade, rough texture on both cheeks, occasional breakouts on my jawline, skin looks dull and tired"></textarea>
     </div>
     <div class="field">
       <label class="field-label">How long have these concerns been present?</label>
@@ -147,19 +188,19 @@ textarea { min-height: 100px; resize: vertical; }
       </div>
     </div>
     <div class="field">
-      <label class="field-label" for="previous_attempts">What have you already tried to address these concerns? <span>*</span></label>
+      <label class="field-label" for="previous_attempts">What have you already tried? <span>*</span></label>
       <p class="field-hint">Treatments, products, facials, prescribed creams, GP visits. Include what worked and what did not.</p>
-      <textarea id="previous_attempts" name="previous_attempts" required placeholder="e.g. Tried vitamin C serum but it irritated my skin. Had a facial once. GP gave me a cream which I stopped using."></textarea>
+      <textarea id="previous_attempts" name="previous_attempts" required placeholder="e.g. Tried vitamin C serum — caused irritation. Had a facial — no lasting improvement. GP gave me a cream which I stopped using."></textarea>
     </div>
 
     <hr class="divider">
 
-    <!-- Products -->
+    <!-- FULL PRODUCT ROUTINE -->
     <div class="section-title">Your Complete Routine</div>
-    <div class="info-box">List every single product you put on your face. If you have no routine, write "no routine" in Product 1. Honesty matters more than precision — a description is fine.</div>
+    <div class="info-box">List every single product you put on your face — morning, evening, or both. If you have no routine, write "no routine" in Product 1. Honesty matters more than precision — a description is completely fine.</div>
 
     <div class="product-block">
-      <div class="product-label">Product 1 — Required</div>
+      <div class="product-label">Product 1 &nbsp;—&nbsp; Required</div>
       <div class="field"><input type="text" name="p1_name" required placeholder="Product name or description — or write 'no routine'"></div>
       <div class="two-col">
         <div class="field">
@@ -171,11 +212,11 @@ textarea { min-height: 100px; resize: vertical; }
           <select name="p1_duration"><option value="">Select</option><option>Under 1 month</option><option>1–3 months</option><option>3–6 months</option><option>6–12 months</option><option>Over a year</option></select>
         </div>
       </div>
-      <div class="field"><label class="field-label">What do you think of it? <span class="field-optional">optional</span></label><input type="text" name="p1_opinion" placeholder="e.g. Skin feels softer but spots haven't improved"></div>
+      <div class="field"><input type="text" name="p1_opinion" placeholder="What do you think of it? (optional)"></div>
     </div>
 
     <div class="product-block">
-      <div class="product-label">Product 2 — Optional</div>
+      <div class="product-label">Product 2 &nbsp;—&nbsp; Optional</div>
       <div class="field"><input type="text" name="p2_name" placeholder="Product name or description"></div>
       <div class="two-col">
         <div class="field"><label class="field-label">When?</label><select name="p2_when"><option value="">Select</option><option>Morning only</option><option>Evening only</option><option>AM and PM</option><option>Occasionally</option></select></div>
@@ -185,7 +226,7 @@ textarea { min-height: 100px; resize: vertical; }
     </div>
 
     <div class="product-block">
-      <div class="product-label">Product 3 — Optional</div>
+      <div class="product-label">Product 3 &nbsp;—&nbsp; Optional</div>
       <div class="field"><input type="text" name="p3_name" placeholder="Product name or description"></div>
       <div class="two-col">
         <div class="field"><label class="field-label">When?</label><select name="p3_when"><option value="">Select</option><option>Morning only</option><option>Evening only</option><option>AM and PM</option><option>Occasionally</option></select></div>
@@ -195,7 +236,7 @@ textarea { min-height: 100px; resize: vertical; }
     </div>
 
     <div class="product-block">
-      <div class="product-label">Product 4 — Optional</div>
+      <div class="product-label">Product 4 &nbsp;—&nbsp; Optional</div>
       <div class="field"><input type="text" name="p4_name" placeholder="Product name or description"></div>
       <div class="two-col">
         <div class="field"><label class="field-label">When?</label><select name="p4_when"><option value="">Select</option><option>Morning only</option><option>Evening only</option><option>AM and PM</option><option>Occasionally</option></select></div>
@@ -223,8 +264,9 @@ textarea { min-height: 100px; resize: vertical; }
 
     <hr class="divider">
 
-    <!-- Lifestyle -->
+    <!-- LIFESTYLE -->
     <div class="section-title">Lifestyle & Internal Health</div>
+
     <div class="field">
       <label class="field-label">Smoking status <span>*</span></label>
       <div class="radio-group">
@@ -301,8 +343,9 @@ textarea { min-height: 100px; resize: vertical; }
 
     <hr class="divider">
 
-    <!-- Medical -->
+    <!-- SKIN HISTORY & MEDICAL -->
     <div class="section-title">Skin History & Medical</div>
+
     <div class="field">
       <label class="field-label">Diagnosed skin conditions? <span>*</span></label>
       <div class="radio-group">
@@ -352,12 +395,12 @@ textarea { min-height: 100px; resize: vertical; }
 
     <hr class="divider">
 
-    <!-- Photos -->
+    <!-- PHOTOS -->
     <div class="section-title">Your Photos</div>
-    <div class="info-box">Four photos required: front facing, right profile, left profile, and a close-up of your main concern area. Natural daylight only. No makeup. No filter. Hair pulled back. Your secure photo upload link will be sent by email after submission.</div>
+    <div class="info-box">Four photos required: front facing, right profile, left profile, and a close-up of your main concern area. Natural daylight only. No makeup. No filter. Hair pulled back. Your secure photo upload link will be sent by email after you submit this form.</div>
     <div class="field">
       <label class="field-label">Is there anything on your face in these photos? <span>*</span></label>
-      <p class="field-hint">Makeup, SPF, moisturiser, oils, Botox or filler all affect what we see.</p>
+      <p class="field-hint">Makeup, SPF, moisturiser, oils, Botox or filler all affect what we see. Please be honest.</p>
       <div class="radio-group">
         <label class="radio-option"><input type="radio" name="face_products" value="No — clean bare skin" required><span class="radio-label">No — bare skin</span></label>
         <label class="radio-option"><input type="radio" name="face_products" value="Yes"><span class="radio-label">Yes</span></label>
@@ -365,24 +408,58 @@ textarea { min-height: 100px; resize: vertical; }
     </div>
     <div class="field">
       <label class="field-label" for="products_detail">If yes — please describe <span class="field-optional">optional</span></label>
-      <input type="text" id="products_detail" name="products_detail" placeholder="e.g. SPF only, no makeup">
+      <input type="text" id="products_detail" name="products_detail" placeholder="e.g. SPF only, no makeup. Filler in cheeks 3 months ago.">
     </div>
 
     <hr class="divider">
 
-    <!-- Consent -->
+    <!-- YOUR THREE SESSIONS -->
+    <div class="section-title">Your Three Included Sessions</div>
+    <div class="sessions-box">
+      <div class="sessions-title">Included with your Unlocked report</div>
+      <div class="session-item">
+        <span class="session-num">01</span>
+        <span>20-minute check-in call via Whereby — scheduled by mutual agreement within 14 days of receiving your report. To review your routine and confirm your lymphatic drainage technique.</span>
+      </div>
+      <div class="session-item">
+        <span class="session-num">02</span>
+        <span>4-week photo check-in — submit front and profile photos at the 4-week mark. Written response from Jamila within 48 hours. Early progress assessment.</span>
+      </div>
+      <div class="session-item">
+        <span class="session-num">03</span>
+        <span>Guided Reiki wellbeing session — 30 minutes via Whereby — scheduled by mutual agreement within 30 days of receiving your report. For nervous system relaxation and energetic balance. Not a medical treatment.</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="field-label">Reiki scheduling preference <span class="field-optional">optional</span></label>
+      <p class="field-hint">This helps Jamila suggest suitable times when she contacts you to schedule.</p>
+      <div class="radio-group">
+        <label class="radio-option"><input type="radio" name="reiki_preference" value="Mornings"><span class="radio-label">Mornings</span></label>
+        <label class="radio-option"><input type="radio" name="reiki_preference" value="Afternoons"><span class="radio-label">Afternoons</span></label>
+        <label class="radio-option"><input type="radio" name="reiki_preference" value="Evenings"><span class="radio-label">Evenings</span></label>
+        <label class="radio-option"><input type="radio" name="reiki_preference" value="Weekends"><span class="radio-label">Weekends</span></label>
+        <label class="radio-option"><input type="radio" name="reiki_preference" value="Flexible"><span class="radio-label">Flexible</span></label>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- CONSENT -->
     <div class="section-title">Consent</div>
     <div class="legal-box">
-      <strong>What Decoded is:</strong> A comprehensive photo-based skin wellness assessment. All observations are photo-observed and based on declared information only.<br><br>
-      <strong>What Decoded is not:</strong> A clinical diagnosis, medical assessment, prescription or treatment plan.<br><br>
-      <strong>Routine and ingredient guidance:</strong> Educational and ingredient-led only. No specific brands are recommended.<br><br>
-      <strong>Two-week follow-up:</strong> Included. After photos to be submitted at the two-week mark via your secure upload link.<br><br>
-      <strong>Your responsibility:</strong> If you have a diagnosed skin condition or are under medical care, please consult your clinician before acting on any guidance.
+      <strong>What Unlocked is:</strong> A comprehensive photo-based skin wellness assessment. All observations are photo-observed and based on declared information only.<br><br>
+      <strong>What Unlocked is not:</strong> A clinical diagnosis, medical assessment, prescription or treatment plan. The Skin Sage does not diagnose or treat medical skin conditions.<br><br>
+      <strong>Routine and ingredient guidance:</strong> Educational and ingredient-led only. No specific brands are recommended. The Skin Sage accepts no liability for product choices made independently.<br><br>
+      <strong>Reiki:</strong> The guided Reiki session is provided for relaxation and energetic balance only. It is not a medical treatment and no health claims are made.<br><br>
+      <strong>Your three sessions:</strong> All three sessions are included and will be scheduled by mutual agreement. Scheduling is subject to Jamila's availability.<br><br>
+      <strong>Your responsibility:</strong> If you have a diagnosed skin condition or are under medical care, please consult your clinician before acting on any guidance in this report.
     </div>
+
     <div class="consent-block">
       <div class="consent-row">
         <input type="checkbox" id="c1" name="consent_service" value="confirmed" required>
-        <label class="consent-text" for="c1">I understand that Decoded is a photo-based educational assessment and not a clinical or medical service.</label>
+        <label class="consent-text" for="c1">I understand that Unlocked is a photo-based educational assessment and not a clinical or medical service.</label>
       </div>
       <div class="consent-row">
         <input type="checkbox" id="c2" name="consent_photos" value="confirmed" required>
@@ -393,17 +470,21 @@ textarea { min-height: 100px; resize: vertical; }
         <label class="consent-text" for="c3">I understand that routine and ingredient guidance is educational and ingredient-led. No specific brands are recommended. I accept responsibility for any products I choose independently.</label>
       </div>
       <div class="consent-row">
-        <input type="checkbox" id="c4" name="consent_followup" value="confirmed" required>
-        <label class="consent-text" for="c4">I understand that my two-week follow-up is included and that I will submit after photos via my secure upload link at the two-week mark.</label>
+        <input type="checkbox" id="c4" name="consent_sessions" value="confirmed" required>
+        <label class="consent-text" for="c4">I understand that my three included sessions — check-in call, 4-week photo check-in, and Reiki session — are included in my Unlocked package and will be scheduled by mutual agreement within the stated timeframes.</label>
       </div>
       <div class="consent-row">
-        <input type="checkbox" id="c5" name="consent_data" value="confirmed" required>
-        <label class="consent-text" for="c5">I consent to The Skin Sage processing my information and photos for the sole purpose of producing my Decoded report and two-week follow-up, in accordance with UK GDPR. My data will not be shared with third parties.</label>
+        <input type="checkbox" id="c5" name="consent_reiki" value="confirmed" required>
+        <label class="consent-text" for="c5">I understand that the Reiki wellbeing session is provided for relaxation and energetic balance only. It is not a medical treatment and no health claims are made.</label>
+      </div>
+      <div class="consent-row">
+        <input type="checkbox" id="c6" name="consent_data" value="confirmed" required>
+        <label class="consent-text" for="c6">I consent to The Skin Sage processing the information and photos I have provided for the sole purpose of producing my Unlocked report and included sessions, in accordance with UK GDPR. My data will not be shared with third parties.</label>
       </div>
     </div>
 
     <div class="field">
-      <p class="field-hint" style="margin-bottom:16px;">After submitting, you will receive a secure photo upload link by email. Your report will be prepared once photos are received.</p>
+      <p class="field-hint" style="margin-bottom:16px;">After submitting, you will receive a secure photo upload link by email. Your report will be prepared once photos are received. Jamila will be in touch to schedule your sessions.</p>
       <button type="submit" class="submit-btn">Submit my form →</button>
     </div>
 
